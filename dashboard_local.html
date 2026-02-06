@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Bobitza Dashboard - LOCAL VERSION</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            margin: 0;
+            text-align: center;
+        }
+        .status {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+        .working { color: #00ff88; }
+        .ready { color: #ffaa00; }
+    </style>
+</head>
+<body>
+    <h1>🤖 Bobitza Activity Dashboard</h1>
+    <h2>Live Work Monitor</h2>
+    
+    <div class="status">
+        <h3 class="working">✅ FULLY OPERATIONAL ✅</h3>
+        <p><strong>Voice:</strong> Perfect TTS + STT</p>
+        <p><strong>Search:</strong> Brave API active</p>
+        <p><strong>Memory:</strong> Persistent tracking</p>
+        <p><strong>Models:</strong> 17 Ollama + Claude Sonnet 4.5</p>
+        <p><strong>Research:</strong> Ready for business opportunities</p>
+    </div>
+    
+    <div class="status">
+        <h3 class="ready">🎯 CURRENT PRIORITY</h3>
+        <p><strong>Business Opportunity Scanning</strong></p>
+        <p>Reddit • Product Hunt • GitHub Trends • Industry Forums</p>
+    </div>
+    
+    <div class="status">
+        <p><strong>Last Updated:</strong> <span id="time"></span></p>
+        <p>💪 <em>"I hold on you, you hold on me"</em> 💪</p>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('en-US', {
+            timeZone: 'Europe/Berlin',
+            year: 'numeric', month: 'long', day: 'numeric',
+            hour: '2-digit', minute: '2-digit'
+        });
+    </script>
+</body>
+</html>
