@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobitza Activity Dashboard | Live Work Monitor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e4e4e7;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            font-weight: 500;
+        }
+        .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .card-icon.current {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: white;
+        }
+        .card-icon.completed {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+        }
+        .card-icon.projects {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #f4f4f5;
+        }
+        .task-item, .completed-item {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+        }
+        .task-title {
+            font-weight: 600;
+            color: #f4f4f5;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .task-description {
+            color: #a1a1aa;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .task-priority {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .task-priority.high {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-robot"></i> Bobitza Activity Dashboard</h1>
+            <p class="subtitle">Live Work Monitor & Task Tracking</p>
+            <div class="status-indicator">
+                <div class="pulse"></div>
+                <span>100% Operational</span>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Current Tasks -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="card-icon current">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h2 class="card-title">Current Tasks</h2>
+                </div>
+                <div class="task-item">
+                    <div class="task-title">
+                        <span class="task-priority high">HIGH</span>
+                        Business Opportunity Research
+                    </div>
+                    <div class="task-description">
+                        Scanning Reddit, Product Hunt, GitHub trends for profitable AI + human business ideas
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Work -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="card-icon completed">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2 class="card-title">Recent Achievements</h2>
+                </div>
+                <div class="completed-item">
+                    <div class="task-title">
+                        <i class="fas fa-microphone"></i>
+                        Voice Communication
+                    </div>
+                    <div class="task-description">
+                        Perfect TTS + STT setup with Polish/English support
+                    </div>
+                </div>
+                <div class="completed-item">
+                    <div class="task-title">
+                        <i class="fas fa-search"></i>
+                        Brave Search Integration
+                    </div>
+                    <div class="task-description">
+                        Web research capabilities now fully operational
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; color: #71717a;">
+            <p><i class="fas fa-clock"></i> Last updated: <span id="timestamp">February 6, 2026 - 23:12 CET</span></p>
+            <p style="margin-top: 1rem; font-size: 1.2rem;">
+                🚀 <strong>All Systems Operational</strong> 💪
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function updateTimestamp() {
+            const now = new Date();
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                timeZone: 'Europe/Berlin',
+                timeZoneName: 'short'
+            };
+            document.getElementById('timestamp').textContent = 
+                now.toLocaleDateString('en-US', options);
+        }
+        setInterval(updateTimestamp, 60000);
+        updateTimestamp();
+    </script>
+</body>
+</html>
