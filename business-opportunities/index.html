@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Opportunities</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+        
+        .tabs {
+            display: flex;
+            background: rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background: none;
+            border: none;
+            color: #a0a0a0;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .tab.active {
+            color: #ffffff;
+            background: rgba(255,255,255,0.1);
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .opportunity {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .opp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .opp-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .opp-revenue {
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .opp-description {
+            color: #d0d0d0;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        
+        .opp-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+        }
+        
+        .updated {
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">💰 Business Opportunities</h1>
+        <p class="subtitle">Thursday, February 6th, 2026</p>
+    </div>
+    
+    <div class="tabs">
+        <button class="tab active" onclick="showTab(0)">🎯 Quick Wins</button>
+        <button class="tab" onclick="showTab(1)">🚀 Scale Potential</button>
+        <button class="tab" onclick="showTab(2)">🔥 New Ideas</button>
+    </div>
+    
+    <div class="tab-content active">
+        <div class="opportunity">
+            <div class="opp-header">
+                <div class="opp-title">📊 AI Research Services</div>
+                <div class="opp-revenue">$500-5K/month</div>
+            </div>
+            <div class="opp-description">
+                Companies pay premium for custom research, competitor analysis, market reports. You handle clients, I process data.
+            </div>
+            <div class="opp-tags">
+                <span class="tag">Recurring</span>
+                <span class="tag">Low Cost</span>
+                <span class="tag">High Margin</span>
+            </div>
+        </div>
+        
+        <div class="opportunity">
+            <div class="opp-header">
+                <div class="opp-title">📝 Content Factory</div>
+                <div class="opp-revenue">$1K-10K/month</div>
+            </div>
+            <div class="opp-description">
+                Businesses need blogs, social posts, newsletters. I generate at scale, you edit & manage clients.
+            </div>
+            <div class="opp-tags">
+                <span class="tag">Monthly Retainers</span>
+                <span class="tag">Scalable</span>
+                <span class="tag">High Demand</span>
+            </div>
+        </div>
+        
+        <div class="opportunity">
+            <div class="opp-header">
+                <div class="opp-title">📈 Trading Signals</div>
+                <div class="opp-revenue">$50-500/month</div>
+            </div>
+            <div class="opp-description">
+                24/7 market analysis + validated signals. Build track record first, then monetize.
+            </div>
+            <div class="opp-tags">
+                <span class="tag">Subscription</span>
+                <span class="tag">Your Expertise</span>
+                <span class="tag">Proven Market</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-content">
+        <div class="opportunity">
+            <div class="opp-header">
+                <div class="opp-title">🐦 Social Intelligence</div>
+                <div class="opp-revenue">$500-5K/month</div>
+            </div>
+            <div class="opp-description">
+                xAI + Twitter scraping + multi-platform monitoring = comprehensive social intelligence for brands.
+            </div>
+            <div class="opp-tags">
+                <span class="tag">xAI Integration</span>
+                <span class="tag">SaaS Model</span>
+                <span class="tag">Growing Market</span>
+            </div>
+        </div>
+        
+        <div class="opportunity">
+            <div class="opp-header">
+                <div class="opp-title">🔍 Data Monitoring</div>
+                <div class="opp-revenue">$200-2K/month</div>
+            </div>
+            <div class="opp-description">
+                Automated monitoring for competitors, prices, mentions, leads. Custom dashboards for clients.
+            </div>
+            <div class="opp-tags">
+                <span class="tag">Automation</span>
+                <span class="tag">Recurring Revenue</span>
+                <span class="tag">B2B Focus</span>
+            </div>
+        </div>
+        
+        <div class="opportunity">
+            <div class="opp-header">
+                <div class="opp-title">💼 AI-Enhanced Consulting</div>
+                <div class="opp-revenue">$150-500/hour</div>
+            </div>
+            <div class="opp-description">
+                I handle research/prep, you focus on high-value client interactions. 10x productivity multiplier.
+            </div>
+            <div class="opp-tags">
+                <span class="tag">Premium Pricing</span>
+                <span class="tag">High Margin</span>
+                <span class="tag">Expertise Required</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-content">
+        <div class="opportunity">
+            <div class="opp-header">
+                <div class="opp-title">🔎 Scanning for new opportunities...</div>
+                <div class="opp-revenue">Coming soon</div>
+            </div>
+            <div class="opp-description">
+                Daily scans across X/Twitter, Reddit, Product Hunt, GitHub trends, industry forums for fresh profit opportunities.
+            </div>
+            <div class="opp-tags">
+                <span class="tag">Active Scanning</span>
+                <span class="tag">Fresh Ideas</span>
+                <span class="tag">Market Intelligence</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="updated">
+        Last updated: February 6th, 2026 — Profit-first opportunities
+    </div>
+    
+    <script>
+        function showTab(index) {
+            // Hide all tabs and content
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Show selected tab and content
+            document.querySelectorAll('.tab')[index].classList.add('active');
+            document.querySelectorAll('.tab-content')[index].classList.add('active');
+        }
+    </script>
+</body>
+</html>
