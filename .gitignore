@@ -1,0 +1,31 @@
+# ================================================
+# 🔒 SECURITY — Never commit these files
+# ================================================
+
+# Personal memory & identity — contains private context
+MEMORY.md
+USER.md
+SOUL.md
+IDENTITY.md
+AGENTS.md
+TOOLS.md
+HEARTBEAT.md
+MODEL_ROUTING.md
+memory/
+
+# OpenClaw config & secrets
+openclaw.json
+.openclaw/
+*.env
+*.secret
+credentials*
+*.key
+*.pem
+*.p12
+
+# Temp / junk files
+file_*---*.txt
+
+# OS junk
+.DS_Store
+Thumbs.db

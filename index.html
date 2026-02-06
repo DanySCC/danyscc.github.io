@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily News Digest | February 6, 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e4e4e7;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        .date {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid;
+        }
+        .section-header.crypto { border-color: #f59e0b; }
+        .section-header.ai { border-color: #8b5cf6; }
+        .section-header.global { border-color: #10b981; }
+        .section-icon {
+            font-size: 1.5rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .news-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        .news-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .news-item:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .news-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .news-title a {
+            color: #e4e4e7;
+            text-decoration: none;
+        }
+        .news-title a:hover {
+            color: #a78bfa;
+        }
+        .news-summary {
+            color: #a1a1aa;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #71717a;
+        }
+        .highlight-red {
+            color: #ef4444;
+            font-weight: 600;
+        }
+        .highlight-green {
+            color: #22c55e;
+            font-weight: 600;
+        }
+        .highlight-yellow {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+        .alert-banner {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .alert-banner .icon {
+            font-size: 1.5rem;
+        }
+        .alert-banner .text {
+            font-weight: 500;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #71717a;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .news-item { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📰 Daily News Digest</h1>
+            <p class="date">Friday, February 6th, 2026</p>
+        </header>
+
+        <div class="alert-banner">
+            <span class="icon">🚨</span>
+            <span class="text">MARKET ALERT: Bitcoin crashes below $64,000 — down nearly 50% from October peak</span>
+        </div>
+
+        <!-- CRYPTO SECTION -->
+        <section class="section">
+            <div class="section-header crypto">
+                <span class="section-icon">₿</span>
+                <h2>Crypto & Bitcoin</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.cnn.com/2026/02/05/investing/bitcoin-price" target="_blank">Bitcoin price under $70,000: Seriously, what's going on?</a></h3>
+                    <p class="news-summary">Bitcoin has <span class="highlight-red">tumbled 44% from its October peak</span>, falling below $70,000 for the first time in 15 months. The cryptocurrency continues its dramatic decline.</p>
+                    <div class="news-meta"><span>CNN Business</span><span>13 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.cnbc.com/2026/02/05/bitcoin-price-today-70000-in-focus.html" target="_blank">Bitcoin drops 15%, briefly breaking below $61,000 as sell-off intensifies</a></h3>
+                    <p class="news-summary">The cryptocurrency broke below $70,000 earlier Thursday, then selling increased further. <span class="highlight-red">BTC is down almost 30% this week alone</span>, approaching pre-election levels.</p>
+                    <div class="news-meta"><span>CNBC</span><span>5 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.bbc.com/news/articles/cy09x24q0pro" target="_blank">Bitcoin price hits lowest level since Trump took office</a></h3>
+                    <p class="news-summary">Bitcoin prices are <span class="highlight-red">down 32% in the last 12 months</span>, trending toward prices seen in early 2024 and 2021.</p>
+                    <div class="news-meta"><span>BBC News</span><span>8 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.nbcnews.com/business/markets/crypto-crash-bitcoin-gold-rcna257556" target="_blank">Bitcoin crash accelerates as investors flee risky assets</a></h3>
+                    <p class="news-summary">Since Jan 6, <span class="highlight-red">bitcoin has lost more than $1.2 trillion in value</span>. Investors are rotating into safe havens like gold.</p>
+                    <div class="news-meta"><span>NBC News</span><span>6 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.investopedia.com/bitcoin-s-price-drops-below-usd67-000-welcome-to-2026-s-crypto-winter-mstr-11900072" target="_blank">Bitcoin Plunges Below $64,000 — Welcome to 2026's 'Crypto Winter'</a></h3>
+                    <p class="news-summary">The leading cryptocurrency changed hands at prices not seen since late 2024, <span class="highlight-red">dropping below $64,000</span>.</p>
+                    <div class="news-meta"><span>Investopedia</span><span>8 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.investing.com/news/cryptocurrency-news/bitcoin-price-today-plunges-below-71k-as-global-tech-selloff-hits-risk-assets-4486483" target="_blank">Crypto rout deepens, Bitcoin slides nearly 50% from record high</a></h3>
+                    <p class="news-summary">Bitcoin has declined in seven of the last eight trading sessions, <span class="highlight-red">shedding nearly 50% from the $126,000 peak</span> reached in October 2025.</p>
+                    <div class="news-meta"><span>Investing.com</span><span>7 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.theguardian.com/technology/2026/feb/05/bitcoin-cryptocurrency-slump" target="_blank">Bitcoin loses half its value in three months amid crypto crunch</a></h3>
+                    <p class="news-summary">CoinGecko data shows the <span class="highlight-red">global crypto market has lost $2 trillion</span> since early October. Trump family crypto ventures also declined.</p>
+                    <div class="news-meta"><span>The Guardian</span><span>7 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://apnews.com/article/bitcoin-prices-falling-cryptocurrency-markets-investment-199a22ac65a675eb67bac89177ddf09b" target="_blank">Bitcoin plunges 11%, now worth less than before Trump's second term</a></h3>
+                    <p class="news-summary">Bitcoin's price continues declining, <span class="highlight-red">dropping another 11% to $67,000</span>. It has lost nearly half its value since hitting a record high in October.</p>
+                    <div class="news-meta"><span>AP News</span><span>9 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.cnbc.com/2026/02/05/bitcoin-prices-crypto-crash-selloff-investors.html" target="_blank">Bitcoin sells off amid 'crypto winter' — What investors need to know</a></h3>
+                    <p class="news-summary">The price for bitcoin sank below $66,000 Thursday, touching its lowest level in more than a year. Analysts warn of more pain ahead.</p>
+                    <div class="news-meta"><span>CNBC</span><span>8 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.coindesk.com/markets/2026/02/05/bitcoin-drops-below-usd65-000-heading-to-worst-one-day-drawdown-since-ftx-blowup" target="_blank">Bitcoin spirals toward $60,000, headed for worst drawdown since FTX crash</a></h3>
+                    <p class="news-summary">Bitcoin <span class="highlight-red">tumbled more than 10% in 24 hours</span>, dropping to $63,000 — the steepest one-day decline since the FTX crash in November 2022.</p>
+                    <div class="news-meta"><span>CoinDesk</span><span>9 hours ago</span></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- AI SECTION -->
+        <section class="section">
+            <div class="section-header ai">
+                <span class="section-icon">🤖</span>
+                <h2>Artificial Intelligence</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.reuters.com/business/media-telecom/global-software-stocks-hit-by-anthropic-wake-up-call-ai-disruption-2026-02-04/" target="_blank">Selloff wipes out nearly $1 trillion from software stocks as investors debate AI's existential threat</a></h3>
+                    <p class="news-summary">"The seemingly wide moats of these companies feel a lot more narrow today as <span class="highlight-yellow">competition from AI-created products intensifies</span>," says Ocean Park Asset Management.</p>
+                    <div class="news-meta"><span>Reuters</span><span>1 day ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://abcnews.go.com/Business/new-ai-tool-hammered-software-stocks-week/story?id=129845251" target="_blank">Why a new AI tool hammered some software stocks this week</a></h3>
+                    <p class="news-summary">Anthropic's new AI tool adapts a workplace assistant for white-collar industries. Some investors see it as a potential replacement for widely-used enterprise products.</p>
+                    <div class="news-meta"><span>ABC News</span><span>8 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.cnbc.com/2026/02/04/alphabet-googl-q4-2025-earnings.html" target="_blank">Google parent beats on revenue, projects significant AI spending increase</a></h3>
+                    <p class="news-summary">CEO Sundar Pichai said <span class="highlight-green">Gemini AI now has 750 million monthly active users</span>, up from 650 million last quarter. More AI investment planned.</p>
+                    <div class="news-meta"><span>CNBC</span><span>1 day ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.cnbc.com/2026/02/04/software-experiencing-most-exciting-moment-as-ai-fears-hammer-stocks.html" target="_blank">Software experiencing 'most exciting moment' as AI fears hammer stocks</a></h3>
+                    <p class="news-summary">The WisdomTree Cloud Computing Fund has <span class="highlight-red">plummeted about 20% in 2026</span>, including a 6.5% drop this week. HubSpot down 39% YTD.</p>
+                    <div class="news-meta"><span>CNBC</span><span>1 day ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank">Researchers develop method to execute AI operations using light</a></h3>
+                    <p class="news-summary">Aalto University researchers developed a method to execute AI tensor operations using just one pass of light, encoding data directly into light waves.</p>
+                    <div class="news-meta"><span>ScienceDaily</span><span>13 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.stocktitan.net/news/ai.html" target="_blank">Aether Holdings Acquires PublicView.ai for AI-Powered Filings Research</a></h3>
+                    <p class="news-summary">Aether Holdings expands Aether Grid with AI-powered public filings research intelligence platform through the PublicView.ai acquisition.</p>
+                    <div class="news-meta"><span>Stock Titan</span><span>13 minutes ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://theconversation.com/topics/artificial-intelligence-ai-90" target="_blank">Researchers question: Have AIs developed unprogrammed capabilities?</a></h3>
+                    <p class="news-summary">Scientists are investigating whether AI systems have developed capabilities they weren't explicitly programmed with — an emerging concern in the field.</p>
+                    <div class="news-meta"><span>The Conversation</span><span>7 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.bighuman.com/blog/whats-happening-now-in-artificial-intelligence" target="_blank">The State of AI in 2026: Latest Releases, Trends, and Future</a></h3>
+                    <p class="news-summary">"AI is exploding because we can ask it human questions now." A comprehensive look at current AI developments and what's coming next.</p>
+                    <div class="news-meta"><span>Big Human</span><span>11 hours ago</span></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- GLOBAL SECTION -->
+        <section class="section">
+            <div class="section-header global">
+                <span class="section-icon">🌍</span>
+                <h2>Global News</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.ndtv.com/world-news" target="_blank">Last major US-Russia arms control agreement expires</a></h3>
+                    <p class="news-summary"><span class="highlight-red">The last major nuclear arms control agreement between the US and Russia expired Thursday</span>, increasing risk of a new arms race amid global instability.</p>
+                    <div class="news-meta"><span>NDTV</span><span>1 day ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.nbcnews.com/world/asia/taiwan-us-ties-are-rock-solid-president-says-xi-warns-trump-arms-sales-rcna257524" target="_blank">Taiwan-U.S. ties 'rock-solid' after Xi warns Trump on arms sales</a></h3>
+                    <p class="news-summary">Taiwan's president affirmed strong US relations after Chinese President Xi Jinping stressed territorial claims to the island in a call with Trump.</p>
+                    <div class="news-meta"><span>NBC News</span><span>14 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.cnbc.com/2026/02/05/chinas-xi-taiwan-trump-trade-talks-iran-russia.html" target="_blank">China's Xi reasserts Taiwan stance in call with Trump</a></h3>
+                    <p class="news-summary">Xi and Putin appeared to project a strong united front, with Moscow calling bilateral relations "an important stabilizing factor" amid growing global turmoil.</p>
+                    <div class="news-meta"><span>CNBC</span><span>1 day ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://apnews.com/article/sudan-famine-rsf-kordofan-darfur-war-hunger-9b16a0419f8d7cc67c7e95939a8a954d" target="_blank">Famine threatens more areas in Darfur as attack kills 22</a></h3>
+                    <p class="news-summary">Famine threatens more areas in Sudan's Darfur region. Paramilitary forces attacked a military hospital in the south, <span class="highlight-red">killing 22 including the hospital director</span>.</p>
+                    <div class="news-meta"><span>AP News</span><span>14 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.nytimes.com/2026/02/05/world/middleeast/iran-protests-crackdown.html" target="_blank">'It's Collective Punishment': Iran Exacts Heavy Price on Protest Supporters</a></h3>
+                    <p class="news-summary">Iranian authorities are making mass arrests, seizing assets, and hunting doctors who treated protesters. Some Iranians keep showing defiance anyway.</p>
+                    <div class="news-meta"><span>New York Times</span><span>10 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.nytimes.com/2026/02/05/world/asia/pakistan-military-operation-displaced-people.html" target="_blank">Thousands Displaced by Military Operation in Pakistan</a></h3>
+                    <p class="news-summary"><span class="highlight-yellow">Some 60,000 evacuees left in limbo</span> by confusion and political disputes as Pakistan battles insurgents on its Afghanistan border.</p>
+                    <div class="news-meta"><span>New York Times</span><span>10 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://apnews.com/article/us-china-trump-xi-iran-call-441425004d3d695df87f3f7c0b62492e" target="_blank">Trump and Xi discuss Iran in wide-ranging call</a></h3>
+                    <p class="news-summary">The US presses China and others to break from Tehran. Iran seized 2 foreign oil tankers in Persian Gulf. Panama rejects China threats over canal ruling.</p>
+                    <div class="news-meta"><span>AP News</span><span>1 day ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.business-standard.com/world-news" target="_blank">Washington Post eliminates one-third of staff</a></h3>
+                    <p class="news-summary">The US newspaper owned by Jeff Bezos eliminated around one-third of its staff, shutting down its sports section and cutting foreign bureaus.</p>
+                    <div class="news-meta"><span>Business Standard</span><span>13 hours ago</span></div>
+                </article>
+
+                <article class="news-item">
+                    <h3 class="news-title"><a href="https://www.bbc.com/news/videos/cm24jl73pydo" target="_blank">Rare phantom jellyfish spotted in deep sea off Argentina</a></h3>
+                    <p class="news-summary">Scientists exploring the South Atlantic deep sea captured a rare sighting of a phantom jellyfish — a fascinating discovery in the depths.</p>
+                    <div class="news-meta"><span>BBC News</span><span>1 day ago</span></div>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <p>Generated by Bobitza 🤖 | Powered by OpenClaw</p>
+            <p>Last updated: February 6, 2026 at 7:00 AM CET</p>
+        </footer>
+    </div>
+</body>
+</html>
