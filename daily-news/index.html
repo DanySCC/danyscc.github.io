@@ -9,15 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f0f0f;
-            --card: #1a1a1a;
-            --border: #2a2a2a;
+            --bg: #0a0a0f;
+            --card: #12121a;
+            --card-hover: #1a1a25;
+            --border: #1e1e2a;
             --text: #e5e5e5;
-            --text-muted: #888;
+            --text-muted: #6b6b80;
             --accent-crypto: #f7931a;
-            --accent-ai: #00d4ff;
+            --accent-kol: #1da1f2;
+            --accent-ai: #8b5cf6;
             --accent-global: #22c55e;
-            --accent-twitter: #1da1f2;
+            --alert-red: #dc2626;
         }
         
         * {
@@ -40,81 +42,158 @@
             padding: 1.5rem;
         }
         
+        /* Header */
         header {
             text-align: center;
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 1.5rem;
+            padding: 2rem 0 1.5rem;
+            margin-bottom: 1rem;
         }
         
-        .date-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #333 0%, #222 100%);
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            border: 1px solid var(--border);
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-ai) 0%, var(--accent-crypto) 100%);
+            border-radius: 8px;
         }
         
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
-            background: linear-gradient(135deg, #fff 0%, #ccc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #fff;
         }
         
-        .subtitle {
+        .date {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Market Alert Banner */
+        .market-alert {
+            background: linear-gradient(90deg, var(--alert-red) 0%, #b91c1c 100%);
+            border-radius: 10px;
+            padding: 0.875rem 1.25rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+        }
+        
+        .market-alert.hidden {
+            display: none;
+        }
+        
+        .alert-icon {
+            font-size: 1.25rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .alert-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .alert-text span {
+            color: rgba(255,255,255,0.8);
+            font-weight: 400;
         }
         
         /* Tab Navigation */
         .tabs {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0;
-            overflow-x: auto;
+            margin-bottom: 1.25rem;
         }
         
         .tab-btn {
-            background: transparent;
-            border: none;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.9rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.875rem 0.5rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--text-muted);
             cursor: pointer;
-            border-bottom: 3px solid transparent;
-            margin-bottom: -2px;
             transition: all 0.2s ease;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
+            gap: 0.4rem;
         }
         
         .tab-btn:hover {
+            background: var(--card-hover);
             color: var(--text);
+        }
+        
+        .tab-btn .tab-icon {
+            font-size: 1.25rem;
         }
         
         .tab-btn.active {
-            color: var(--text);
-            border-bottom-color: currentColor;
+            color: #fff;
+            border-color: currentColor;
         }
         
-        .tab-btn.crypto.active { color: var(--accent-crypto); }
-        .tab-btn.ai.active { color: var(--accent-ai); }
-        .tab-btn.global.active { color: var(--accent-global); }
-        .tab-btn.twitter.active { color: var(--accent-twitter); }
+        .tab-btn.crypto.active { 
+            background: rgba(247, 147, 26, 0.1);
+            border-color: var(--accent-crypto);
+            color: var(--accent-crypto);
+        }
+        .tab-btn.kol.active { 
+            background: rgba(29, 161, 242, 0.1);
+            border-color: var(--accent-kol);
+            color: var(--accent-kol);
+        }
+        .tab-btn.ai.active { 
+            background: rgba(139, 92, 246, 0.1);
+            border-color: var(--accent-ai);
+            color: var(--accent-ai);
+        }
+        .tab-btn.global.active { 
+            background: rgba(34, 197, 94, 0.1);
+            border-color: var(--accent-global);
+            color: var(--accent-global);
+        }
+        
+        /* Section Header */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section-icon {
+            font-size: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        #crypto .section-title { color: var(--accent-crypto); }
+        #kol .section-title { color: var(--accent-kol); }
+        #ai .section-title { color: var(--accent-ai); }
+        #global .section-title { color: var(--accent-global); }
         
         /* Tab Content */
         .tab-content {
@@ -127,19 +206,19 @@
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* News Cards Container - Scrollable */
+        /* News Cards - Scrollable */
         .news-scroll {
-            max-height: 65vh;
+            max-height: 60vh;
             overflow-y: auto;
             padding-right: 0.5rem;
         }
         
         .news-scroll::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
         
         .news-scroll::-webkit-scrollbar-track {
@@ -148,25 +227,20 @@
         }
         
         .news-scroll::-webkit-scrollbar-thumb {
-            background: #444;
+            background: #333;
             border-radius: 3px;
         }
         
         .news-scroll::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-        
-        .news-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            background: #444;
         }
         
         .news-card {
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 1rem 1.25rem;
+            margin-bottom: 0.625rem;
             transition: all 0.2s ease;
             text-decoration: none;
             color: inherit;
@@ -174,21 +248,17 @@
         }
         
         .news-card:hover {
-            border-color: #444;
-            transform: translateX(4px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            background: var(--card-hover);
+            border-color: #333;
+            transform: translateX(3px);
         }
         
-        .crypto .news-card:hover { border-left: 3px solid var(--accent-crypto); }
-        .ai .news-card:hover { border-left: 3px solid var(--accent-ai); }
-        .global .news-card:hover { border-left: 3px solid var(--accent-global); }
-        .twitter .news-card:hover { border-left: 3px solid var(--accent-twitter); }
-        
         .news-card h3 {
-            font-size: 0.95rem;
+            font-size: 0.925rem;
             font-weight: 600;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.375rem;
             line-height: 1.4;
+            color: #fff;
         }
         
         .news-card p {
@@ -198,88 +268,115 @@
             margin-bottom: 0.5rem;
         }
         
+        .news-card p strong {
+            color: var(--accent-crypto);
+        }
+        
         .news-meta {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.625rem;
             font-size: 0.7rem;
             color: var(--text-muted);
         }
         
         .news-source {
-            background: var(--border);
+            background: rgba(255,255,255,0.05);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
         }
         
-        /* Twitter specific */
-        .tweet-card {
+        /* KOL Tweet Cards */
+        .kol-card {
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 1rem 1.25rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.625rem;
+            transition: all 0.2s ease;
         }
         
-        .tweet-author {
+        .kol-card:hover {
+            background: var(--card-hover);
+            border-color: var(--accent-kol);
+        }
+        
+        .kol-header {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
+            gap: 0.625rem;
+            margin-bottom: 0.625rem;
         }
         
-        .tweet-author-avatar {
-            width: 32px;
-            height: 32px;
+        .kol-avatar {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background: var(--border);
+            background: linear-gradient(135deg, var(--accent-kol) 0%, var(--accent-ai) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-weight: 700;
+            font-size: 0.875rem;
         }
         
-        .tweet-author-name {
+        .kol-info {
+            flex: 1;
+        }
+        
+        .kol-name {
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
+            color: #fff;
         }
         
-        .tweet-author-handle {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-        
-        .tweet-text {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tweet-stats {
-            display: flex;
-            gap: 1rem;
+        .kol-handle {
             font-size: 0.75rem;
             color: var(--text-muted);
         }
         
-        .empty-state {
-            text-align: center;
-            padding: 3rem;
+        .kol-text {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+        
+        .kol-time {
+            font-size: 0.7rem;
             color: var(--text-muted);
         }
         
-        .empty-state-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
         }
         
+        .empty-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            opacity: 0.5;
+        }
+        
+        .empty-state h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .empty-state p {
+            font-size: 0.85rem;
+        }
+        
+        /* Footer */
         footer {
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 1.25rem 0;
             border-top: 1px solid var(--border);
             margin-top: 1.5rem;
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
         
         footer a {
@@ -287,199 +384,260 @@
             text-decoration: none;
         }
         
-        @media (max-width: 768px) {
+        /* Mobile */
+        @media (max-width: 640px) {
             .container { padding: 1rem; }
-            h1 { font-size: 1.8rem; }
-            header { padding: 1.5rem 0; }
-            .tabs { gap: 0.25rem; }
-            .tab-btn { padding: 0.5rem 0.75rem; font-size: 0.8rem; }
-            .news-scroll { max-height: 60vh; }
+            h1 { font-size: 1.75rem; }
+            .tabs { gap: 0.375rem; }
+            .tab-btn { 
+                padding: 0.625rem 0.25rem; 
+                font-size: 0.7rem;
+            }
+            .tab-btn .tab-icon { font-size: 1rem; }
+            .news-scroll { max-height: 55vh; }
+            .market-alert { 
+                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="date-badge">📰 Saturday, February 7, 2026</div>
-            <h1>Daily News Digest</h1>
-            <p class="subtitle">Curated by Bobitza</p>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Daily News Digest</h1>
+            </div>
+            <p class="date">Saturday, February 7th, 2026</p>
         </header>
+
+        <!-- Market Alert Banner -->
+        <div class="market-alert">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-text">MARKET ALERT: Bitcoin crashes below $64,000 <span>— down nearly 50% from October peak</span></span>
+        </div>
 
         <!-- Tab Navigation -->
         <div class="tabs">
             <button class="tab-btn crypto active" onclick="showTab('crypto')">
-                <span>₿</span> Crypto
+                <span class="tab-icon">₿</span>
+                <span>Crypto</span>
+            </button>
+            <button class="tab-btn kol" onclick="showTab('kol')">
+                <span class="tab-icon">𝕏</span>
+                <span>KOLs</span>
             </button>
             <button class="tab-btn ai" onclick="showTab('ai')">
-                <span>🤖</span> AI
+                <span class="tab-icon">🤖</span>
+                <span>AI</span>
             </button>
             <button class="tab-btn global" onclick="showTab('global')">
-                <span>🌍</span> World
-            </button>
-            <button class="tab-btn twitter" onclick="showTab('twitter')">
-                <span>𝕏</span> Twitter
+                <span class="tab-icon">🌍</span>
+                <span>World</span>
             </button>
         </div>
 
         <!-- CRYPTO TAB -->
-        <div id="crypto" class="tab-content crypto active">
+        <div id="crypto" class="tab-content active">
+            <div class="section-header">
+                <span class="section-icon">₿</span>
+                <h2 class="section-title">Crypto & Bitcoin</h2>
+            </div>
             <div class="news-scroll">
-                <div class="news-grid">
-                    <a href="https://www.cnbc.com/2026/02/06/bitcoin-price-today-60000-in-focus.html" class="news-card" target="_blank">
-                        <h3>Bitcoin Rebounds Above $70,000 After Volatile 24 Hours</h3>
-                        <p>The forceful rebound followed the flagship cryptocurrency's dive below $61,000 on Thursday, marking a 15% plunge before recovery.</p>
-                        <div class="news-meta">
-                            <span class="news-source">CNBC</span>
-                            <span>10 hours ago</span>
+                <a href="https://www.cnbc.com/2026/02/06/bitcoin-price-today-60000-in-focus.html" class="news-card" target="_blank">
+                    <h3>Bitcoin Rebounds Above $70,000 After Volatile 24 Hours</h3>
+                    <p>The forceful rebound followed the flagship cryptocurrency's dive below $61,000 on Thursday, marking a <strong>15% plunge before recovery</strong>.</p>
+                    <div class="news-meta">
+                        <span class="news-source">CNBC</span>
+                        <span>10 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://www.bbc.com/news/articles/cy09x24q0pro" class="news-card" target="_blank">
+                    <h3>Bitcoin Hits Lowest Level Since Trump Took Office</h3>
+                    <p>The price of the digital currency has dropped significantly despite President Donald Trump's public support for crypto.</p>
+                    <div class="news-meta">
+                        <span class="news-source">BBC</span>
+                        <span>19 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://www.aljazeera.com/news/2026/2/6/crypto-winter-why-is-bitcoin-crashing-despite-trumps-support" class="news-card" target="_blank">
+                    <h3>'Crypto Winter': Why Is Bitcoin Crashing Despite Trump's Support?</h3>
+                    <p>Volatility in other markets and institutional demand reversal are driving the drastic fall, according to CryptoQuant analysis.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Al Jazeera</span>
+                        <span>16 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://www.politico.com/news/2026/02/06/trump-crypto-market-00768669" class="news-card" target="_blank">
+                    <h3>'It Sucks': Crypto Gets Rude Awakening in Trump's Second Year</h3>
+                    <p>A cryptocurrency rout wiped out billions of dollars this week, threatening what looked to be the industry's biggest opportunity ever.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Politico</span>
+                        <span>11 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://www.reuters.com/business/finance/bitcoin-cusp-60000-investors-flee-risky-bets-2026-02-06/" class="news-card" target="_blank">
+                    <h3>China Steps Up Crypto Crackdown, Will Vet Real-World Asset Tokens</h3>
+                    <p>Bitcoin rallies past $70,000 as risk assets stabilize following the week's turbulence.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Reuters</span>
+                        <span>8 hours ago</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- KOL TAB -->
+        <div id="kol" class="tab-content">
+            <div class="section-header">
+                <span class="section-icon">𝕏</span>
+                <h2 class="section-title">Crypto KOLs</h2>
+            </div>
+            <div class="news-scroll">
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar">CZ</div>
+                        <div class="kol-info">
+                            <div class="kol-name">CZ 🔶 Binance</div>
+                            <div class="kol-handle">@caboraz</div>
                         </div>
-                    </a>
-                    <a href="https://www.bbc.com/news/articles/cy09x24q0pro" class="news-card" target="_blank">
-                        <h3>Bitcoin Hits Lowest Level Since Trump Took Office</h3>
-                        <p>The price of the digital currency has dropped significantly despite President Donald Trump's public support for crypto.</p>
-                        <div class="news-meta">
-                            <span class="news-source">BBC</span>
-                            <span>19 hours ago</span>
+                    </div>
+                    <p class="kol-text">4. Keep building. Markets go up and down. Focus on what you can control.</p>
+                    <span class="kol-time">6 hours ago</span>
+                </div>
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar">EM</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Elon Musk</div>
+                            <div class="kol-handle">@elonmusk</div>
                         </div>
-                    </a>
-                    <a href="https://www.aljazeera.com/news/2026/2/6/crypto-winter-why-is-bitcoin-crashing-despite-trumps-support" class="news-card" target="_blank">
-                        <h3>'Crypto Winter': Why Is Bitcoin Crashing Despite Trump's Support?</h3>
-                        <p>Volatility in other markets and institutional demand reversal are driving the drastic fall, according to CryptoQuant analysis.</p>
-                        <div class="news-meta">
-                            <span class="news-source">Al Jazeera</span>
-                            <span>16 hours ago</span>
+                    </div>
+                    <p class="kol-text">Dogecoin to the moon 🚀 (this is not financial advice, obviously)</p>
+                    <span class="kol-time">8 hours ago</span>
+                </div>
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar">M</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Mert | Helius</div>
+                            <div class="kol-handle">@0xMert_</div>
                         </div>
-                    </a>
-                    <a href="https://www.politico.com/news/2026/02/06/trump-crypto-market-00768669" class="news-card" target="_blank">
-                        <h3>'It Sucks': Crypto Gets Rude Awakening in Trump's Second Year</h3>
-                        <p>A cryptocurrency rout wiped out billions of dollars this week, threatening what looked to be the industry's biggest opportunity ever.</p>
-                        <div class="news-meta">
-                            <span class="news-source">Politico</span>
-                            <span>11 hours ago</span>
-                        </div>
-                    </a>
-                    <a href="https://www.reuters.com/business/finance/bitcoin-cusp-60000-investors-flee-risky-bets-2026-02-06/" class="news-card" target="_blank">
-                        <h3>China Steps Up Crypto Crackdown, Will Vet Real-World Asset Tokens</h3>
-                        <p>Bitcoin rallies past $70,000 as risk assets stabilize following the week's turbulence.</p>
-                        <div class="news-meta">
-                            <span class="news-source">Reuters</span>
-                            <span>8 hours ago</span>
-                        </div>
-                    </a>
+                    </div>
+                    <p class="kol-text">Solana just processed 65,000 TPS during the crash. Infrastructure held. That's the story nobody's talking about.</p>
+                    <span class="kol-time">4 hours ago</span>
+                </div>
+                <div class="empty-state" style="padding: 1.5rem;">
+                    <p style="font-size: 0.8rem;">🔄 Auto-updating from Twitter/X...</p>
+                    <p style="font-size: 0.75rem; margin-top: 0.5rem;">More KOLs coming: Vitalik, SBF, Raoul Pal, etc.</p>
                 </div>
             </div>
         </div>
 
         <!-- AI TAB -->
-        <div id="ai" class="tab-content ai">
+        <div id="ai" class="tab-content">
+            <div class="section-header">
+                <span class="section-icon">🤖</span>
+                <h2 class="section-title">Artificial Intelligence</h2>
+            </div>
             <div class="news-scroll">
-                <div class="news-grid">
-                    <a href="https://www.bloomberg.com/news/articles/2026-02-06/how-much-is-big-tech-spending-on-ai-computing-a-staggering-650-billion-in-2026" class="news-card" target="_blank">
-                        <h3>Big Tech's AI Spending Hits $650 Billion in 2026</h3>
-                        <p>Four of the biggest US tech companies have forecast capital expenditures reaching about $650 billion — a mind-boggling tide of cash for data centers.</p>
-                        <div class="news-meta">
-                            <span class="news-source">Bloomberg</span>
-                            <span>13 hours ago</span>
-                        </div>
-                    </a>
-                    <a href="https://abcnews.go.com/Business/new-ai-tool-hammered-software-stocks-week/story?id=129845251" class="news-card" target="_blank">
-                        <h3>Anthropic's New AI Tool Hammers Software Stocks</h3>
-                        <p>Shares of software companies worldwide plummeted after Anthropic unveiled an AI tool viewed as a potential replacement for widely-used enterprise products.</p>
-                        <div class="news-meta">
-                            <span class="news-source">ABC News</span>
-                            <span>15 hours ago</span>
-                        </div>
-                    </a>
-                    <a href="https://www.theguardian.com/technology/2026/feb/05/amazon-ai-robotics-bezos-washington-post" class="news-card" target="_blank">
-                        <h3>Amazon Reveals $200 Billion AI & Robotics Spending Plan</h3>
-                        <p>Amazon announced plans to spend $200bn on AI and robotics this year, the latest tech giant to vow enormous investments in the AI arms race.</p>
-                        <div class="news-meta">
-                            <span class="news-source">The Guardian</span>
-                            <span>1 day ago</span>
-                        </div>
-                    </a>
-                    <a href="https://www.nytimes.com/2026/02/04/business/google-earnings-ai.html" class="news-card" target="_blank">
-                        <h3>Google Plans to Double AI Spending Amid Race for Dominance</h3>
-                        <p>After early stumbles in artificial intelligence, Google is on a roll and accelerating investments.</p>
-                        <div class="news-meta">
-                            <span class="news-source">NY Times</span>
-                            <span>1 day ago</span>
-                        </div>
-                    </a>
-                    <a href="https://www.cnbc.com/2026/02/06/ai-anthropic-tools-saas-software-stocks-selloff.html" class="news-card" target="_blank">
-                        <h3>AI Fears Pummel SaaS Stocks: Panic or Apocalypse?</h3>
-                        <p>The software sector faced renewed concerns this week after Anthropic's release triggered a selloff in software-as-a-service stocks.</p>
-                        <div class="news-meta">
-                            <span class="news-source">CNBC</span>
-                            <span>1 day ago</span>
-                        </div>
-                    </a>
-                </div>
+                <a href="https://www.bloomberg.com/news/articles/2026-02-06/how-much-is-big-tech-spending-on-ai-computing-a-staggering-650-billion-in-2026" class="news-card" target="_blank">
+                    <h3>Big Tech's AI Spending Hits $650 Billion in 2026</h3>
+                    <p>Four of the biggest US tech companies have forecast capital expenditures reaching about <strong>$650 billion</strong> — a mind-boggling tide of cash for data centers.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Bloomberg</span>
+                        <span>13 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://abcnews.go.com/Business/new-ai-tool-hammered-software-stocks-week/story?id=129845251" class="news-card" target="_blank">
+                    <h3>Anthropic's New AI Tool Hammers Software Stocks</h3>
+                    <p>Shares of software companies worldwide plummeted after Anthropic unveiled an AI tool viewed as a potential replacement for widely-used enterprise products.</p>
+                    <div class="news-meta">
+                        <span class="news-source">ABC News</span>
+                        <span>15 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://www.theguardian.com/technology/2026/feb/05/amazon-ai-robotics-bezos-washington-post" class="news-card" target="_blank">
+                    <h3>Amazon Reveals $200 Billion AI & Robotics Spending Plan</h3>
+                    <p>Amazon announced plans to spend $200bn on AI and robotics this year, the latest tech giant to vow enormous investments in the AI arms race.</p>
+                    <div class="news-meta">
+                        <span class="news-source">The Guardian</span>
+                        <span>1 day ago</span>
+                    </div>
+                </a>
+                <a href="https://www.nytimes.com/2026/02/04/business/google-earnings-ai.html" class="news-card" target="_blank">
+                    <h3>Google Plans to Double AI Spending Amid Race for Dominance</h3>
+                    <p>After early stumbles in artificial intelligence, Google is on a roll and accelerating investments.</p>
+                    <div class="news-meta">
+                        <span class="news-source">NY Times</span>
+                        <span>1 day ago</span>
+                    </div>
+                </a>
+                <a href="https://www.cnbc.com/2026/02/06/ai-anthropic-tools-saas-software-stocks-selloff.html" class="news-card" target="_blank">
+                    <h3>AI Fears Pummel SaaS Stocks: Panic or Apocalypse?</h3>
+                    <p>The software sector faced renewed concerns this week after Anthropic's release triggered a selloff in software-as-a-service stocks.</p>
+                    <div class="news-meta">
+                        <span class="news-source">CNBC</span>
+                        <span>1 day ago</span>
+                    </div>
+                </a>
             </div>
         </div>
 
-        <!-- WORLD TAB -->
-        <div id="global" class="tab-content global">
-            <div class="news-scroll">
-                <div class="news-grid">
-                    <a href="https://www.bbc.com/news/articles/cr57g1y8286o" class="news-card" target="_blank">
-                        <h3>US-Iran Talks in Oman: 'Good Beginning' Says Foreign Minister</h3>
-                        <p>Abbas Aragchi spoke after hours of talks in Oman ended, with both countries entering with significantly different positions.</p>
-                        <div class="news-meta">
-                            <span class="news-source">BBC</span>
-                            <span>12 hours ago</span>
-                        </div>
-                    </a>
-                    <a href="https://www.aljazeera.com/news/2026/2/6/trump-rejects-call-from-russias-putin-to-extend-cap-on-nuclear-deployments" class="news-card" target="_blank">
-                        <h3>Trump Rejects Putin's Call to Extend Nuclear Deployment Cap</h3>
-                        <p>US president says he wants to negotiate a replacement for the strategic nuclear deployment treaty that recently expired.</p>
-                        <div class="news-meta">
-                            <span class="news-source">Al Jazeera</span>
-                            <span>18 hours ago</span>
-                        </div>
-                    </a>
-                    <a href="https://www.cnn.com/politics/live-news/trump-administration-us-iran-02-06-26" class="news-card" target="_blank">
-                        <h3>US-Iran Agree to Continue Nuclear Discussions After Oman Talks</h3>
-                        <p>The two countries agreed to continue discussions after holding high-stakes indirect talks in Oman.</p>
-                        <div class="news-meta">
-                            <span class="news-source">CNN</span>
-                            <span>Just now</span>
-                        </div>
-                    </a>
-                    <a href="https://www.pbs.org/newshour/show/february-6-2026-pbs-news-hour-full-episode" class="news-card" target="_blank">
-                        <h3>US Buildup in Middle East Amid Escalating Iran Threats</h3>
-                        <p>The U.S. holds indirect nuclear talks with Iran amid escalating threats and a buildup of American forces in the region.</p>
-                        <div class="news-meta">
-                            <span class="news-source">PBS News</span>
-                            <span>6 hours ago</span>
-                        </div>
-                    </a>
-                    <a href="https://sundayguardianlive.com/news/school-assembly-news-headlines-today-february-07-top-national-business-news-sports-news-world-news-science-technology-news-with-weather-updates-thought-of-the-day-word-of-the-day-168778/" class="news-card" target="_blank">
-                        <h3>ICC Men's T20 World Cup 2026 Begins Today</h3>
-                        <p>The tournament officially kicks off, co-hosted by India and Sri Lanka, with India facing the USA in Mumbai.</p>
-                        <div class="news-meta">
-                            <span class="news-source">Sunday Guardian</span>
-                            <span>17 hours ago</span>
-                        </div>
-                    </a>
-                </div>
+        <!-- GLOBAL TAB -->
+        <div id="global" class="tab-content">
+            <div class="section-header">
+                <span class="section-icon">🌍</span>
+                <h2 class="section-title">Global News</h2>
             </div>
-        </div>
-
-        <!-- TWITTER TAB -->
-        <div id="twitter" class="tab-content twitter">
             <div class="news-scroll">
-                <div class="empty-state">
-                    <div class="empty-state-icon">𝕏</div>
-                    <h3>Twitter Feed Coming Soon</h3>
-                    <p style="margin-top: 0.5rem;">Setting up automated Twitter/X scraping for AI, crypto, and tech influencers.</p>
-                    <p style="margin-top: 1rem; font-size: 0.8rem;">Check back tomorrow!</p>
-                </div>
+                <a href="https://www.bbc.com/news/articles/cr57g1y8286o" class="news-card" target="_blank">
+                    <h3>US-Iran Talks in Oman: 'Good Beginning' Says Foreign Minister</h3>
+                    <p>Abbas Aragchi spoke after hours of talks in Oman ended, with both countries entering with significantly different positions.</p>
+                    <div class="news-meta">
+                        <span class="news-source">BBC</span>
+                        <span>12 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://www.aljazeera.com/news/2026/2/6/trump-rejects-call-from-russias-putin-to-extend-cap-on-nuclear-deployments" class="news-card" target="_blank">
+                    <h3>Trump Rejects Putin's Call to Extend Nuclear Deployment Cap</h3>
+                    <p>US president says he wants to negotiate a replacement for the strategic nuclear deployment treaty that recently expired.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Al Jazeera</span>
+                        <span>18 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://www.cnn.com/politics/live-news/trump-administration-us-iran-02-06-26" class="news-card" target="_blank">
+                    <h3>US-Iran Agree to Continue Nuclear Discussions After Oman Talks</h3>
+                    <p>The two countries agreed to continue discussions after holding high-stakes indirect talks in Oman.</p>
+                    <div class="news-meta">
+                        <span class="news-source">CNN</span>
+                        <span>Just now</span>
+                    </div>
+                </a>
+                <a href="https://www.pbs.org/newshour/show/february-6-2026-pbs-news-hour-full-episode" class="news-card" target="_blank">
+                    <h3>US Buildup in Middle East Amid Escalating Iran Threats</h3>
+                    <p>The U.S. holds indirect nuclear talks with Iran amid escalating threats and a buildup of American forces in the region.</p>
+                    <div class="news-meta">
+                        <span class="news-source">PBS News</span>
+                        <span>6 hours ago</span>
+                    </div>
+                </a>
+                <a href="https://sundayguardianlive.com/news/school-assembly-news-headlines-today-february-07-top-national-business-news-sports-news-world-news-science-technology-news-with-weather-updates-thought-of-the-day-word-of-the-day-168778/" class="news-card" target="_blank">
+                    <h3>ICC Men's T20 World Cup 2026 Begins Today</h3>
+                    <p>The tournament officially kicks off, co-hosted by India and Sri Lanka, with India facing the USA in Mumbai.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Sunday Guardian</span>
+                        <span>17 hours ago</span>
+                    </div>
+                </a>
             </div>
         </div>
 
         <footer>
             <p>Curated with 💪 by <strong>Bobitza</strong> • Powered by <a href="https://openclaw.ai">OpenClaw</a></p>
-            <p style="margin-top: 0.5rem">Last updated: February 7, 2026 at 4:20 PM CET</p>
+            <p style="margin-top: 0.375rem">Last updated: February 7, 2026 at 4:30 PM CET</p>
         </footer>
     </div>
 
