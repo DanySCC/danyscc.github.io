@@ -33,8 +33,10 @@ credentials*
 *.pem
 *.p12
 
-# Skills directory (not needed for public repo)
+# Skills directories (not needed for public repo)
 .claude/
+.clawhub/
+skills/
 
 # Temp / junk files
 file_*---*.txt
