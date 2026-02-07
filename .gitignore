@@ -13,6 +13,16 @@ HEARTBEAT.md
 MODEL_ROUTING.md
 memory/
 
+# Business intelligence & private dashboards
+BUSINESS_IDEAS.md
+SECURITY.md
+dashboard.html
+dashboard_local.html
+dashboard/
+
+# Private Python files (test code)
+*.py
+
 # OpenClaw config & secrets
 openclaw.json
 .openclaw/
@@ -23,9 +33,20 @@ credentials*
 *.pem
 *.p12
 
+# Skills directory (not needed for public repo)
+.claude/
+
 # Temp / junk files
 file_*---*.txt
+*.tmp
+*.bak
 
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Build/IDE artifacts
+node_modules/
+__pycache__/
+.vscode/
+.idea/
