@@ -345,6 +345,69 @@
             font-size: 0.7rem;
             color: var(--text-muted);
         }
+
+        .kol-tier-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin: 0.75rem 0 0.375rem;
+            padding-left: 0.25rem;
+        }
+
+        .kol-tier-label:first-child {
+            margin-top: 0;
+        }
+
+        .kol-badge {
+            font-size: 0.58rem;
+            font-weight: 700;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            vertical-align: middle;
+            margin-left: 0.3rem;
+        }
+
+        .badge-market {
+            background: rgba(247, 147, 26, 0.2);
+            color: var(--accent-crypto);
+        }
+
+        .badge-education {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--accent-ai);
+        }
+
+        .badge-news {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--accent-global);
+        }
+
+        .kol-follow {
+            font-size: 0.7rem;
+            color: var(--accent-kol);
+            text-decoration: none;
+            white-space: nowrap;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            margin-left: auto;
+        }
+
+        .kol-follow:hover {
+            opacity: 1;
+        }
+
+        .kol-note {
+            text-align: center;
+            padding: 0.875rem 1rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 0.375rem;
+        }
         
         /* Empty State */
         .empty-state {
@@ -492,46 +555,184 @@
         <div id="kol" class="tab-content">
             <div class="section-header">
                 <span class="section-icon">𝕏</span>
-                <h2 class="section-title">Crypto KOLs</h2>
+                <h2 class="section-title">Crypto KOLs to Follow</h2>
             </div>
             <div class="news-scroll">
+                <div class="kol-tier-label">⭐ Tier 1 — Must Follow</div>
+
                 <div class="kol-card">
                     <div class="kol-header">
-                        <div class="kol-avatar">CZ</div>
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #f7931a, #f59e0b)">CZ</div>
                         <div class="kol-info">
-                            <div class="kol-name">CZ 🔶 Binance</div>
+                            <div class="kol-name">CZ <span class="kol-badge badge-market">Market</span></div>
                             <div class="kol-handle">@caboraz</div>
                         </div>
+                        <a href="https://twitter.com/caboraz" class="kol-follow" target="_blank">Follow on 𝕏</a>
                     </div>
-                    <p class="kol-text">4. Keep building. Markets go up and down. Focus on what you can control.</p>
-                    <span class="kol-time">6 hours ago</span>
+                    <p class="kol-text">Binance founder. His posts move markets — exchange updates, regulatory views, and macro crypto outlook.</p>
                 </div>
+
                 <div class="kol-card">
                     <div class="kol-header">
-                        <div class="kol-avatar">EM</div>
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #6b7280, #374151)">EM</div>
                         <div class="kol-info">
-                            <div class="kol-name">Elon Musk</div>
+                            <div class="kol-name">Elon Musk <span class="kol-badge badge-market">Market</span></div>
                             <div class="kol-handle">@elonmusk</div>
                         </div>
+                        <a href="https://twitter.com/elonmusk" class="kol-follow" target="_blank">Follow on 𝕏</a>
                     </div>
-                    <p class="kol-text">Dogecoin to the moon 🚀 (this is not financial advice, obviously)</p>
-                    <span class="kol-time">8 hours ago</span>
+                    <p class="kol-text">Dogecoin champion & crypto sentiment driver. One tweet can move the entire market.</p>
                 </div>
+
                 <div class="kol-card">
                     <div class="kol-header">
-                        <div class="kol-avatar">M</div>
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #3b82f6, #6366f1)">VB</div>
                         <div class="kol-info">
-                            <div class="kol-name">Mert | Helius</div>
+                            <div class="kol-name">Vitalik Buterin <span class="kol-badge badge-education">Education</span></div>
+                            <div class="kol-handle">@VitalikButerin</div>
+                        </div>
+                        <a href="https://twitter.com/VitalikButerin" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Ethereum creator. Deep dives into protocol design, crypto philosophy, and the future of Web3.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #f97316, #dc2626)">MS</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Michael Saylor <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@saylor</div>
+                        </div>
+                        <a href="https://twitter.com/saylor" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Bitcoin maximalist & MicroStrategy CEO. Relentlessly bullish on BTC as a store of value.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #10b981, #059669)">RP</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Raoul Pal <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@RaoulGMI</div>
+                        </div>
+                        <a href="https://twitter.com/RaoulGMI" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Macro meets crypto. RealVision CEO with institutional-grade analysis on global liquidity cycles.</p>
+                </div>
+
+                <div class="kol-tier-label">📊 Tier 2 — Crypto Market</div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #ef4444, #b91c1c)">AH</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Arthur Hayes <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@CryptoHayes</div>
+                        </div>
+                        <a href="https://twitter.com/CryptoHayes" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">BitMEX founder. Bold macro predictions wrapped in colorful writing. Loves a contrarian take.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #f7931a, #d97706)">AP</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Anthony Pompliano <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@APompliano</div>
+                        </div>
+                        <a href="https://twitter.com/APompliano" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Bitcoin evangelist and investor. Clear, consistent messaging on why BTC is the future of money.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9)">BC</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Benjamin Cowen <span class="kol-badge badge-education">Education</span></div>
+                            <div class="kol-handle">@intocryptoverse</div>
+                        </div>
+                        <a href="https://twitter.com/intocryptoverse" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Data-driven on-chain analysis. Charts cycles, dominance, and risk levels without the hype.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #14b8a6, #0891b2)">SM</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Scott Melker <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@scottmelker</div>
+                        </div>
+                        <a href="https://twitter.com/scottmelker" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">"Wolf of All Streets" — trading insights, TA, and calm takes during volatile markets.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed)">M</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Mert <span class="kol-badge badge-market">Market</span></div>
                             <div class="kol-handle">@0xMert_</div>
                         </div>
+                        <a href="https://twitter.com/0xMert_" class="kol-follow" target="_blank">Follow on 𝕏</a>
                     </div>
-                    <p class="kol-text">Solana just processed 65,000 TPS during the crash. Infrastructure held. That's the story nobody's talking about.</p>
-                    <span class="kol-time">4 hours ago</span>
+                    <p class="kol-text">Helius co-founder. Deep in the Solana ecosystem — infra, DeFi, and builder culture.</p>
                 </div>
-                <div class="empty-state" style="padding: 1.5rem;">
-                    <p style="font-size: 0.8rem;">🔄 Auto-updating from Twitter/X...</p>
-                    <p style="font-size: 0.75rem; margin-top: 0.5rem;">More KOLs coming: Vitalik, SBF, Raoul Pal, etc.</p>
+
+                <div class="kol-tier-label">📰 Tier 3 — News & Analysis</div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #22c55e, #16a34a)">WG</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Watcher.Guru <span class="kol-badge badge-news">News</span></div>
+                            <div class="kol-handle">@WatcherGuru</div>
+                        </div>
+                        <a href="https://twitter.com/WatcherGuru" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Breaking crypto news in real-time. First to post whale moves, exchange alerts, and major events.</p>
                 </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #a855f7, #9333ea)">CB</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Coin Bureau <span class="kol-badge badge-education">Education</span></div>
+                            <div class="kol-handle">@coinbureau</div>
+                        </div>
+                        <a href="https://twitter.com/coinbureau" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">In-depth project reviews and educational content. The go-to for unbiased crypto research.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #64748b, #475569)">TB</div>
+                        <div class="kol-info">
+                            <div class="kol-name">The Block <span class="kol-badge badge-news">News</span></div>
+                            <div class="kol-handle">@TheBlock__</div>
+                        </div>
+                        <a href="https://twitter.com/TheBlock__" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Institutional-grade crypto news. Coverage of regulatory moves, VC deals, and enterprise adoption.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #1da1f2, #0284c7)">CD</div>
+                        <div class="kol-info">
+                            <div class="kol-name">CoinDesk <span class="kol-badge badge-news">News</span></div>
+                            <div class="kol-handle">@CoinDesk</div>
+                        </div>
+                        <a href="https://twitter.com/CoinDesk" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Industry standard crypto journalism. Covers markets, policy, and culture since 2013.</p>
+                </div>
+
+                <div class="kol-note">📌 Auto-tracking these accounts coming soon via Twitter/X integration</div>
             </div>
         </div>
 
