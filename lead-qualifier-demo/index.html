@@ -38,8 +38,12 @@
             33% { transform: translate(30px, -30px) rotate(120deg); }
             66% { transform: translate(-20px, 20px) rotate(240deg); }
         }
+        html {
+            overflow-x: hidden;
+        }
         .container {
             max-width: 900px;
+            width: 100%;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -158,9 +162,11 @@
         }
         .phone-input select {
             flex: 0 0 90px;
+            min-width: 0;
         }
         .phone-input input {
             flex: 1;
+            min-width: 0;
         }
         .budget-input {
             display: flex;
@@ -168,9 +174,11 @@
         }
         .budget-input select {
             flex: 0 0 90px;
+            min-width: 0;
         }
         .budget-input input {
             flex: 1;
+            min-width: 0;
         }
         .submit-btn {
             background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
@@ -340,14 +348,65 @@
             background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         }
         @media (max-width: 768px) {
+            body {
+                padding: 0.5rem;
+            }
+            .header {
+                padding: 1rem 0;
+            }
             .header h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+            }
+            .header p {
+                font-size: 0.95rem;
             }
             .form-grid {
                 grid-template-columns: 1fr;
+                gap: 0.85rem;
             }
             .demo-section {
                 padding: 1.25rem;
+                border-radius: 16px;
+            }
+            .demo-section h2 {
+                font-size: 1.3rem;
+            }
+            .ai-analysis-box {
+                padding: 1rem;
+            }
+            .ai-analysis-box h3 {
+                font-size: 0.9rem;
+            }
+            .ai-analysis-box li {
+                font-size: 0.8rem;
+            }
+            input, textarea, select {
+                font-size: 0.9rem;
+                padding: 0.6rem 0.75rem;
+            }
+            .phone-input select {
+                flex: 0 0 80px;
+                font-size: 0.85rem;
+            }
+            .budget-input select {
+                flex: 0 0 85px;
+                font-size: 0.85rem;
+            }
+            .benefits {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .benefit-card {
+                padding: 1.5rem;
+            }
+            .cta-section {
+                padding: 1.75rem;
+            }
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+            .cta-section p {
+                font-size: 1rem;
             }
         }
         .loading {
