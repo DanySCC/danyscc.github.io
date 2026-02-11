@@ -557,7 +557,7 @@
         const result = document.getElementById('result');
         const submitBtn = form.querySelector('.submit-btn');
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // Get form data
@@ -580,39 +580,72 @@
             result.classList.remove('show');
             submitBtn.disabled = true;
 
-            // Show demo result after 2 seconds (simulated)
-            setTimeout(() => {
+            try {
+                // Try calling real API first
+                const response = await fetch('https://hook.eu1.make.com/szfad4fmm90fapls7hfhejni6fmir91d', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                    mode: 'cors'
+                });
+
+                const data = await response.json();
+                
+                // Hide loading
                 loading.classList.remove('show');
                 
-                // Show demo result
+                // Show real AI result
                 const statusBadge = document.getElementById('statusBadge');
                 const score = document.getElementById('score');
                 const reasoning = document.getElementById('reasoning');
 
-                // Simulate AI qualification based on form data
-                let demoStatus = 'nurture';
-                let demoScore = 6;
-                let demoReasoning = `Based on the information provided (budget: ${formData.budget || 'not specified'}, timeline: ${formData.timeline || 'not specified'}, location: ${formData.location || 'not specified'}), this lead shows potential but needs further qualification. The message indicates interest but may lack urgency or specific requirements.`;
-
-                if (formData.budget && formData.timeline && formData.location && formData.message.length > 50) {
-                    demoStatus = 'qualified';
-                    demoScore = 8;
-                    demoReasoning = `✅ Strong lead with clear budget (${formData.budget}), defined timeline (${formData.timeline}), specific location (${formData.location}), and detailed message. Shows high intent and readiness to move forward. Recommended for immediate follow-up.`;
-                } else if (!formData.budget || formData.message.length < 20) {
-                    demoStatus = 'not_qualified';
-                    demoScore = 3;
-                    demoReasoning = `❌ Lead lacks sufficient information to qualify effectively. Missing critical details (budget, timeline, or location). Message is too brief to assess genuine interest. Recommend nurture campaign before sales contact.`;
-                }
-
-                statusBadge.textContent = demoStatus.toUpperCase().replace('_', ' ');
-                statusBadge.className = 'status-badge ' + demoStatus;
+                statusBadge.textContent = data.qualification_status.toUpperCase().replace('_', ' ');
+                statusBadge.className = 'status-badge ' + data.qualification_status;
                 
-                score.textContent = `Score: ${demoScore}/10`;
-                reasoning.textContent = demoReasoning + '\n\n✨ This is a simulated demo response showing how our AI analyzes leads. Want to see the real AI in action? Contact us to integrate this into your business!';
+                score.textContent = `Score: ${data.score}/10`;
+                reasoning.textContent = data.reasoning + '\n\n🤖 This is a REAL AI qualification powered by Claude Sonnet 4!';
                 
                 result.classList.add('show');
                 submitBtn.disabled = false;
-            }, 2000);
+
+            } catch (error) {
+                // Fallback to simulated demo if CORS fails
+                console.log('API call failed, using demo mode:', error);
+                
+                setTimeout(() => {
+                    loading.classList.remove('show');
+                    
+                    const statusBadge = document.getElementById('statusBadge');
+                    const score = document.getElementById('score');
+                    const reasoning = document.getElementById('reasoning');
+
+                    // Simulate AI qualification
+                    let demoStatus = 'nurture';
+                    let demoScore = 6;
+                    let demoReasoning = `Based on the information provided (budget: ${formData.budget || 'not specified'}, timeline: ${formData.timeline || 'not specified'}, location: ${formData.location || 'not specified'}), this lead shows potential but needs further qualification.`;
+
+                    if (formData.budget && formData.timeline && formData.location && formData.message.length > 50) {
+                        demoStatus = 'qualified';
+                        demoScore = 8;
+                        demoReasoning = `✅ Strong lead with clear budget (${formData.budget}), defined timeline (${formData.timeline}), specific location (${formData.location}), and detailed message. Shows high intent and readiness to move forward.`;
+                    } else if (!formData.budget || formData.message.length < 20) {
+                        demoStatus = 'not_qualified';
+                        demoScore = 3;
+                        demoReasoning = `❌ Lead lacks sufficient information. Missing critical details (budget, timeline, or location). Message too brief to assess genuine interest.`;
+                    }
+
+                    statusBadge.textContent = demoStatus.toUpperCase().replace('_', ' ');
+                    statusBadge.className = 'status-badge ' + demoStatus;
+                    
+                    score.textContent = `Score: ${demoScore}/10`;
+                    reasoning.textContent = demoReasoning + '\n\n✨ Demo mode (browser security prevents live API call). Contact us to integrate the real AI into your business!';
+                    
+                    result.classList.add('show');
+                    submitBtn.disabled = false;
+                }, 1000);
+            }
         });
     </script>
 </body>
