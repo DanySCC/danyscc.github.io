@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily News Digest — February 10, 2026</title>
+    <title>Daily News Digest — February 11, 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -294,6 +294,9 @@
             padding: 1rem 1.25rem;
             margin-bottom: 0.625rem;
             transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
         
         .kol-card:hover {
@@ -472,13 +475,13 @@
                 <div class="logo-icon"></div>
                 <h1>Daily News Digest</h1>
             </div>
-            <p class="date">Monday, February 10th, 2026</p>
+            <p class="date">Tuesday, February 11th, 2026 • Morning Edition</p>
         </header>
 
-        <!-- Market Alert Banner -->
-        <div class="market-alert">
+        <!-- Market Alert Banner (hidden - no major crashes today) -->
+        <div class="market-alert hidden">
             <span class="alert-icon">⚠️</span>
-            <span class="alert-text">MARKET ALERT: Bitcoin flash crashed to $60,000 <span>— 25% drop from recent highs before recovery to $69k</span></span>
+            <span class="alert-text">MARKET ALERT: <span>No critical alerts at this time</span></span>
         </div>
 
         <!-- Tab Navigation -->
@@ -508,100 +511,138 @@
                 <h2 class="section-title">Crypto & Bitcoin</h2>
             </div>
             <div class="news-scroll">
-                <a href="https://cryptoticker.io/en/bitcoin-price-news-today-february-2026-rebound/" class="news-card" target="_blank">
-                    <h3>Bitcoin Rebounds Above $71,000 After Historic Flash Crash to $60,000</h3>
-                    <p>After a brutal sell-off that saw BTC plunge to a terrifying low of $60,000, Bitcoin has staged a resilient comeback. As of today, <strong>Bitcoin is trading firmly above $71,000</strong>, showing market resilience.</p>
+                <a href="https://www.coindesk.com/tech/2026/02/09/megaeth-debuts-mainnet-as-ethereum-scaling-debate-heats-up" class="news-card" target="_blank">
+                    <h3>MegaETH Mainnet Launches with 100,000 TPS, Challenging Solana</h3>
+                    <p><strong>MegaETH officially launched its public mainnet on February 9, 2026</strong>, positioning itself as a "real-time blockchain" targeting over 100,000 transactions per second with sub-millisecond latency — a direct challenge to Solana's speed dominance.</p>
                     <div class="news-meta">
-                        <span class="news-source">CryptoTicker</span>
+                        <span class="news-source">CoinDesk</span>
+                        <span>2 days ago</span>
+                    </div>
+                </a>
+                
+                <a href="https://coincodex.com/article/81537/daily-market-update-for-february-10-2026/" class="news-card" target="_blank">
+                    <h3>Bitcoin Holds Near $70K as Market Cap Hits $2.38T</h3>
+                    <p>Bitcoin trades at <strong>$69,448 after a -2.13% dip in the last 24 hours</strong>. Total crypto market cap increased from $2.36T to $2.38T (+0.70%). LayerZero (ZRO) emerged as coin of the day with +13.29% gains.</p>
+                    <div class="news-meta">
+                        <span class="news-source">CoinCodex</span>
                         <span>1 day ago</span>
                     </div>
                 </a>
-                <a href="https://coincodex.com/article/81537/daily-market-update-for-february-10-2026/" class="news-card" target="_blank">
-                    <h3>Crypto Market Update: BTC at $69,448, ZRO Surges +13.29%</h3>
-                    <p>The total cryptocurrency market cap is at $2.38T. <strong>Bitcoin price fell -2.13% to $69,448 in the last 24 hours</strong>, while LayerZero (ZRO) emerges as coin of the day with strong gains.</p>
+
+                <a href="https://coincentral.com/bitcoin-etfs-see-back-to-back-inflows-as-bitcoin-price-rebounds/" class="news-card" target="_blank">
+                    <h3>Bitcoin ETFs Record $616M in Back-to-Back Inflows</h3>
+                    <p><strong>Bitcoin ETFs saw $471.1M inflow on Friday, followed by $144.9M on Monday</strong>. This surge coincides with bitcoin's recovery from $60,000 to around $70,000, signaling renewed investor confidence.</p>
                     <div class="news-meta">
-                        <span class="news-source">CoinCodex</span>
+                        <span class="news-source">CoinCentral</span>
+                        <span>1 day ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.interactivecrypto.com/bitcoin-shakes-off-early-decline-returns-to-70000-as-bernstein-reiterates-150000-outlook-1770692079659" class="news-card" target="_blank">
+                    <h3>Bernstein Maintains $150K Bitcoin Target Despite Pullback</h3>
+                    <p>Bitcoin's latest price of <strong>$70,071 reflects a minor 0.92% dip over 24 hours</strong>, yet Bernstein analyst Gautam Chhugani doubled down on the $150K target for 2026, calling this "the weakest bear case in Bitcoin's history."</p>
+                    <div class="news-meta">
+                        <span class="news-source">Interactive Crypto</span>
                         <span>7 hours ago</span>
                     </div>
                 </a>
-                <a href="https://thecryptobasic.com/2026/02/09/bernstein-maintains-150000-bitcoin-forecast-despite-market-pullback/" class="news-card" target="_blank">
-                    <h3>Bernstein Maintains $150,000 Bitcoin Forecast Despite Market Pullback</h3>
-                    <p>Despite Bitcoin's recent downturn, <strong>brokerage firm Bernstein reaffirms its $150,000 price target for Bitcoin by the end of 2026</strong>, calling this "the weakest bitcoin bear case in its history."</p>
+
+                <a href="https://www.cnbc.com/2026/02/10/bitcoin-crypto-trading-speculation-galaxy-ceo-mike-novogratz.html" class="news-card" target="_blank">
+                    <h3>Galaxy CEO: Crypto's "Age of Speculation" May Be Over</h3>
+                    <p>Mike Novogratz said at the CNBC Digital Finance Forum that the crypto industry is experiencing a fundamental shift. <strong>The post-FTX "breakdown in trust" has reshaped market dynamics</strong> away from pure speculation.</p>
                     <div class="news-meta">
-                        <span class="news-source">The Crypto Basic</span>
+                        <span class="news-source">CNBC</span>
+                        <span>8 hours ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.odaily.news/en/newsflash/468148" class="news-card" target="_blank">
+                    <h3>Bitcoin Drop to $59,930 May Mark Mid-Cycle Low</h3>
+                    <p>Kaiko Research analysis points out that <strong>Bitcoin fell to around $59,930 at the beginning of February</strong>, hitting a new low since October 2024, which may mark the "midpoint" of the current bear market before reversal.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Odaily</span>
+                        <span>17 hours ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.lexology.com/library/detail.aspx?g=ab5cd873-fd9d-4f6e-b647-cb57f63410fc" class="news-card" target="_blank">
+                    <h3>SEC and CFTC Pledge to Harmonize Crypto Regulation</h3>
+                    <p>On <strong>January 29, 2026, SEC Chairman Paul Atkins and CFTC Chairman Michael Selig held a joint event</strong> marking a watershed moment for U.S. crypto regulation, signaling an end to inter-agency turf wars.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Lexology</span>
+                        <span>5 days ago</span>
+                    </div>
+                </a>
+
+                <a href="https://coinnews.com/news/crypto-white-house-meeting-clarity-act-passed/" class="news-card" target="_blank">
+                    <h3>White House Crypto Meeting: CLARITY Act Passage Expected Soon</h3>
+                    <p><strong>Huge crypto meeting at the White House today</strong> as Washington moves toward passing clear, straightforward crypto regulation. The CLARITY Act would split oversight between SEC and CFTC with clearer definitions for digital assets.</p>
+                    <div class="news-meta">
+                        <span class="news-source">CoinNews</span>
+                        <span>17 hours ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.bitdegree.org/crypto/news/bitnomial-lists-first-ever-us-tezos-futures-contract" class="news-card" target="_blank">
+                    <h3>Bitnomial Lists First-Ever US Tezos Futures Contract</h3>
+                    <p><strong>Bitnomial introduced the first US Tezos (XTZ) futures on February 4, 2026</strong>, with trading in both USD and crypto margin. The CFTC-regulated market gives traders better price discovery and helps meet SEC standards for possible Tezos ETFs.</p>
+                    <div class="news-meta">
+                        <span class="news-source">BitDegree</span>
+                        <span>1 week ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.bitget.com/news/detail/12560605192223" class="news-card" target="_blank">
+                    <h3>Ethereum L1-zkEVM 2026 Roadmap: First Workshop Set for Today</h3>
+                    <p>Under the L1-zkEVM 2026 roadmap, a new proposal would allow validators to confirm blocks without full execution, improving efficiency. <strong>The first L1-zkEVM workshop is set for February 11, 2026</strong> (today).</p>
+                    <div class="news-meta">
+                        <span class="news-source">Bitget News</span>
+                        <span>18 hours ago</span>
+                    </div>
+                </a>
+
+                <a href="https://finance.yahoo.com/news/13-4-million-altcoins-dead-121145866.html" class="news-card" target="_blank">
+                    <h3>13.4 Million Altcoins Dead: Regulation Turns Crypto Into Graveyard</h3>
+                    <p><strong>Music and video tokens failed at rates close to 75%</strong>. Crypto analyst Krüger argued that outdated regulations and token structures fueled the crisis: "Most tokens ever created are worthless by design."</p>
+                    <div class="news-meta">
+                        <span class="news-source">Yahoo Finance</span>
+                        <span>2 days ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.hokanews.com/2026/02/bitcoin-liquidation-heatmap-signals.html" class="news-card" target="_blank">
+                    <h3>Bitcoin Liquidation Heatmap Shows Massive Cluster Above Current Price</h3>
+                    <p>Bitcoin liquidation heatmap data shows <strong>a large liquidity cluster above the current price</strong>, signaling potential volatility and liquidation-driven moves that could push BTC higher in coming days.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Hoka News</span>
                         <span>1 day ago</span>
                     </div>
                 </a>
-                <a href="https://www.coindesk.com/markets/2026/02/09/michael-saylor-s-strategy-made-modest-bitcoin-acquisition-during-last-week-s-crypto-crash" class="news-card" target="_blank">
-                    <h3>Strategy Buys 1,142 BTC for $90M During Market Crash</h3>
-                    <p>Michael Saylor's Strategy added <strong>1,142 bitcoin for $90 million at an average price of $78,815 each</strong>. The company now holds 714,644 BTC despite currently sitting on $5B unrealized loss.</p>
+
+                <a href="https://cryptoticker.io/en/shiba-inu-price-prediction-feb-2026-analysis/" class="news-card" target="_blank">
+                    <h3>Shiba Inu Under Pressure as Bitcoin Drops Below $70K</h3>
+                    <p>Ethereum faces heavy pressure as Bitcoin drops below $70,000. Meanwhile, <strong>MegaETH mainnet went live as of February 9, 2026</strong>, potentially competing with both Ethereum and Solana ecosystems.</p>
                     <div class="news-meta">
-                        <span class="news-source">CoinDesk</span>
-                        <span>1 day ago</span>
-                    </div>
-                </a>
-                <a href="https://coincentral.com/bitcoin-etfs-see-back-to-back-inflows-as-bitcoin-price-rebounds/" class="news-card" target="_blank">
-                    <h3>Bitcoin ETFs See Back-to-Back Inflows as Price Recovers</h3>
-                    <p><strong>On Friday, Bitcoin ETFs saw $471.1M inflow, followed by an additional $144.9M on Monday</strong>. This surge coincides with bitcoin's recovery from $60k to around $70k, signaling renewed investor confidence.</p>
-                    <div class="news-meta">
-                        <span class="news-source">CoinCentral</span>
-                        <span>5 hours ago</span>
-                    </div>
-                </a>
-                <a href="https://www.ibtimes.co.uk/latest-bitcoin-crypto-market-developments-that-could-shape-2026-1777766" class="news-card" target="_blank">
-                    <h3>The Great Bitcoin Reset of 2026: Mid-Cycle Correction or More?</h3>
-                    <p>The recent market turbulence signals more than just a correction — <strong>it reflects a foundational recalibration for the world's first cryptocurrency</strong> as it matures into institutional territory.</p>
-                    <div class="news-meta">
-                        <span class="news-source">IBTimes UK</span>
-                        <span>5 hours ago</span>
-                    </div>
-                </a>
-                <a href="https://sherwood.news/crypto/bernstein-analyst-says-bitcoin-bear-case-is-the-weakest-in-its-history/" class="news-card" target="_blank">
-                    <h3>Bernstein: "Bitcoin Bear Case Is the Weakest in Its History"</h3>
-                    <p>Analyst Gautam Chhugani reiterated his $150,000 bitcoin price target, saying what we're experiencing is <strong>"the weakest bitcoin bear case in its 16-year history"</strong> with strong institutional backing.</p>
-                    <div class="news-meta">
-                        <span class="news-source">Sherwood News</span>
-                        <span>1 day ago</span>
-                    </div>
-                </a>
-                <a href="https://ambcrypto.com/arthur-hayes-dumps-3-1m-in-defi-tokens-strategic-exit-or-panic-signal/" class="news-card" target="_blank">
-                    <h3>Arthur Hayes Dumps $3.1M in DeFi Tokens Amid Market Weakness</h3>
-                    <p>BitMEX co-founder Arthur Hayes sold <strong>$1.06M worth of ENA, $954k worth of ETHFI, and $1.14M worth of other DeFi tokens</strong> on February 9, raising concerns about market struggles and timing.</p>
-                    <div class="news-meta">
-                        <span class="news-source">AMBCrypto</span>
-                        <span>1 day ago</span>
-                    </div>
-                </a>
-                <a href="https://coincodex.com/article/81512/will-crypto-recover/" class="news-card" target="_blank">
-                    <h3>Understanding the Crypto Market Crash: Will It Recover in 2026?</h3>
-                    <p>Reports point to <strong>large, sustained selling by institutions over several weeks, and a sharp drawdown in stablecoin supply</strong> from late 2025 into February 2026. Stablecoin supply acts like dry powder for rallies.</p>
-                    <div class="news-meta">
-                        <span class="news-source">CoinCodex</span>
-                        <span>1 day ago</span>
-                    </div>
-                </a>
-                <a href="https://www.fool.com/investing/2026/02/09/prediction-this-popular-cryptocurrency-will-plunge/" class="news-card" target="_blank">
-                    <h3>Analyst Predicts Dogecoin Could Crash 50% to $0.05 by Year-End</h3>
-                    <p>Motley Fool analyst warns that <strong>Dogecoin could revert toward its five-year lows of $0.05 by the end of 2026</strong>, questioning its long-term value proposition beyond meme status.</p>
-                    <div class="news-meta">
-                        <span class="news-source">Motley Fool</span>
-                        <span>1 day ago</span>
-                    </div>
-                </a>
-                <a href="https://www.interactivecrypto.com/bitcoin-shakes-off-early-decline-returns-to-70000-as-bernstein-reiterates-150000-outlook-1770692079659" class="news-card" target="_blank">
-                    <h3>Bitcoin Reclaims $70,000 Mark After Brief Dip</h3>
-                    <p>As of February 10, 2026, the cryptocurrency market is buzzing with renewed energy, with <strong>Bitcoin reclaiming the $70,000 mark</strong> after a fleeting dip, showing resilience despite volatility.</p>
-                    <div class="news-meta">
-                        <span class="news-source">Interactive Crypto</span>
+                        <span class="news-source">CryptoTicker</span>
                         <span>13 hours ago</span>
                     </div>
                 </a>
-                <a href="https://financefeeds.com/googles-gemini-recommend-these-7-as-the-best-cryptos-to-buy-today-one-presale-is-smashing-all-records/" class="news-card" target="_blank">
-                    <h3>Tron Dominates Stablecoin Volume with Massive USDT Circulation</h3>
-                    <p>February 2026's environment highlights Tron's defensive qualities ahead of potential altcoin rallies. <strong>Tron dominates stablecoin volume with massive USDT circulation</strong> and high throughput for DeFi.</p>
+
+                <a href="https://www.bitget.com/amp/news/detail/12560605184945" class="news-card" target="_blank">
+                    <h3>EU Risks Falling Behind US in Tokenization Regulations</h3>
+                    <p><strong>Eight EU-regulated companies including Securitize warn that the EU may fall behind the US</strong> in tokenization regulations, as American regulatory clarity begins to attract more crypto businesses.</p>
                     <div class="news-meta">
-                        <span class="news-source">Finance Feeds</span>
-                        <span>16 hours ago</span>
+                        <span class="news-source">Bitget News</span>
+                        <span>6 days ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.ibtimes.co.uk/latest-bitcoin-crypto-market-developments-that-could-shape-2026-1777766" class="news-card" target="_blank">
+                    <h3>The "Bitcoin Reset" Could Shape the Rest of 2026</h3>
+                    <p>The term 'Bitcoin Reset' refers to a scenario where <strong>the market undergoes a deep recalibration—resetting price expectations, investor behavior, and institutional engagement</strong>, redefining what Bitcoin is.</p>
+                    <div class="news-meta">
+                        <span class="news-source">IBTimes UK</span>
+                        <span>1 day ago</span>
                     </div>
                 </a>
             </div>
@@ -614,67 +655,67 @@
                 <h2 class="section-title">What Top Crypto Voices Are Saying</h2>
             </div>
             <div class="news-scroll">
-                <div class="kol-tier-label">💬 Recent Discussions (Last 24h)</div>
+                <div class="kol-tier-label">💬 Today's Discussions</div>
 
-                <div class="kol-card">
+                <a href="https://twitter.com/Galaxy_Research" class="kol-card" target="_blank">
                     <div class="kol-header">
-                        <div class="kol-avatar" style="background: linear-gradient(135deg, #f97316, #dc2626)">MS</div>
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8)">MN</div>
                         <div class="kol-info">
-                            <div class="kol-name">Michael Saylor</div>
-                            <div class="kol-handle">@saylor</div>
+                            <div class="kol-name">Mike Novogratz <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@novogratz</div>
                         </div>
-                        <span class="kol-time">Yesterday</span>
+                        <span class="kol-time">8 hours ago</span>
                     </div>
-                    <p class="kol-text">Strategy continues Bitcoin accumulation strategy during market volatility, adding 1,142 BTC at $78,815 average price. Total holdings now exceed 714,644 BTC despite short-term unrealized losses.</p>
-                </div>
+                    <p class="kol-text">Speaking at CNBC Digital Finance Forum: The "age of speculation" in crypto may be over. Post-FTX trust breakdown has fundamentally changed the market. We're entering a more mature, institutionalized phase.</p>
+                </a>
 
-                <div class="kol-card">
-                    <div class="kol-header">
-                        <div class="kol-avatar" style="background: linear-gradient(135deg, #ef4444, #b91c1c)">AH</div>
-                        <div class="kol-info">
-                            <div class="kol-name">Arthur Hayes</div>
-                            <div class="kol-handle">@CryptoHayes</div>
-                        </div>
-                        <span class="kol-time">Yesterday</span>
-                    </div>
-                    <p class="kol-text">Made strategic exit from DeFi positions, selling $3.1M across ENA, ETHFI, and other tokens. Market sentiment suggests taking profits during strength while evaluating macro conditions.</p>
-                </div>
-
-                <div class="kol-card">
-                    <div class="kol-header">
-                        <div class="kol-avatar" style="background: linear-gradient(135deg, #22c55e, #16a34a)">WG</div>
-                        <div class="kol-info">
-                            <div class="kol-name">Watcher.Guru</div>
-                            <div class="kol-handle">@WatcherGuru</div>
-                        </div>
-                        <span class="kol-time">7 hours ago</span>
-                    </div>
-                    <p class="kol-text">Breaking: Bitcoin ETFs record back-to-back inflows totaling $616M over Friday and Monday. Institutional confidence returning as BTC stabilizes above $69,000 following flash crash recovery.</p>
-                </div>
-
-                <div class="kol-card">
+                <a href="https://twitter.com/intocryptoverse" class="kol-card" target="_blank">
                     <div class="kol-header">
                         <div class="kol-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9)">BC</div>
                         <div class="kol-info">
-                            <div class="kol-name">Benjamin Cowen</div>
+                            <div class="kol-name">Benjamin Cowen <span class="kol-badge badge-market">Market</span></div>
                             <div class="kol-handle">@intocryptoverse</div>
                         </div>
                         <span class="kol-time">12 hours ago</span>
                     </div>
-                    <p class="kol-text">On-chain analysis shows stablecoin supply drawdown from late 2025 into Feb 2026. When dry powder shrinks, rallies struggle. Watching for stablecoin inflows as a leading indicator for next leg up.</p>
-                </div>
+                    <p class="kol-text">Bitcoin hitting $59,930 could be the mid-cycle low according to Kaiko Research. If history rhymes, this would be the "midpoint" before the next leg up. Patience pays in crypto cycles.</p>
+                </a>
 
-                <div class="kol-card">
+                <a href="https://twitter.com/CoinDesk" class="kol-card" target="_blank">
                     <div class="kol-header">
                         <div class="kol-avatar" style="background: linear-gradient(135deg, #1da1f2, #0284c7)">CD</div>
                         <div class="kol-info">
-                            <div class="kol-name">CoinDesk</div>
+                            <div class="kol-name">CoinDesk <span class="kol-badge badge-news">News</span></div>
                             <div class="kol-handle">@CoinDesk</div>
                         </div>
-                        <span class="kol-time">5 hours ago</span>
+                        <span class="kol-time">2 days ago</span>
                     </div>
-                    <p class="kol-text">Bernstein analyst doubles down on $150k BTC target for 2026, calling current conditions "the weakest bear case in Bitcoin's history" with unprecedented institutional backing and ETF demand.</p>
-                </div>
+                    <p class="kol-text">BREAKING: MegaETH mainnet is live, targeting 100,000+ TPS with sub-millisecond latency. This could reshape the Ethereum scaling debate and challenge Solana's speed advantage. Real-time blockchain is here.</p>
+                </a>
+
+                <a href="https://twitter.com/WatcherGuru" class="kol-card" target="_blank">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #22c55e, #16a34a)">WG</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Watcher.Guru <span class="kol-badge badge-news">News</span></div>
+                            <div class="kol-handle">@WatcherGuru</div>
+                        </div>
+                        <span class="kol-time">1 day ago</span>
+                    </div>
+                    <p class="kol-text">Bitcoin ETFs just recorded back-to-back inflows: $471.1M Friday + $144.9M Monday = $616M total. Institutional money is returning as BTC stabilizes above $69K after the flash crash recovery.</p>
+                </a>
+
+                <a href="https://twitter.com/Bernstein" class="kol-card" target="_blank">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #f97316, #ea580c)">BR</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Bernstein Research <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@Bernstein</div>
+                        </div>
+                        <span class="kol-time">7 hours ago</span>
+                    </div>
+                    <p class="kol-text">Analyst Gautam Chhugani reiterates $150K BTC target for 2026. This is "the weakest bitcoin bear case in its 16-year history" with unprecedented institutional backing and ETF demand. The fundamentals have never been stronger.</p>
+                </a>
 
                 <div class="kol-tier-label">⭐ Who to Follow</div>
 
@@ -716,6 +757,18 @@
 
                 <div class="kol-card">
                     <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #f97316, #dc2626)">MS</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Michael Saylor <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@saylor</div>
+                        </div>
+                        <a href="https://twitter.com/saylor" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">Bitcoin maximalist, MicroStrategy CEO. His company holds over 714,644 BTC and continues accumulating.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
                         <div class="kol-avatar" style="background: linear-gradient(135deg, #10b981, #059669)">RP</div>
                         <div class="kol-info">
                             <div class="kol-name">Raoul Pal <span class="kol-badge badge-market">Market</span></div>
@@ -724,6 +777,18 @@
                         <a href="https://twitter.com/RaoulGMI" class="kol-follow" target="_blank">Follow on 𝕏</a>
                     </div>
                     <p class="kol-text">Macro meets crypto. RealVision CEO with institutional-grade analysis on global liquidity cycles.</p>
+                </div>
+
+                <div class="kol-card">
+                    <div class="kol-header">
+                        <div class="kol-avatar" style="background: linear-gradient(135deg, #ef4444, #b91c1c)">AH</div>
+                        <div class="kol-info">
+                            <div class="kol-name">Arthur Hayes <span class="kol-badge badge-market">Market</span></div>
+                            <div class="kol-handle">@CryptoHayes</div>
+                        </div>
+                        <a href="https://twitter.com/CryptoHayes" class="kol-follow" target="_blank">Follow on 𝕏</a>
+                    </div>
+                    <p class="kol-text">BitMEX founder with macro predictions and bold takes on crypto markets and global finance.</p>
                 </div>
 
                 <div class="kol-card">
@@ -750,30 +815,6 @@
                     <p class="kol-text">"Wolf of All Streets" — trading insights, TA, and calm takes during volatile markets.</p>
                 </div>
 
-                <div class="kol-card">
-                    <div class="kol-header">
-                        <div class="kol-avatar" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed)">M</div>
-                        <div class="kol-info">
-                            <div class="kol-name">Mert <span class="kol-badge badge-market">Market</span></div>
-                            <div class="kol-handle">@0xMert_</div>
-                        </div>
-                        <a href="https://twitter.com/0xMert_" class="kol-follow" target="_blank">Follow on 𝕏</a>
-                    </div>
-                    <p class="kol-text">Helius co-founder. Deep in the Solana ecosystem — infra, DeFi, and builder culture.</p>
-                </div>
-
-                <div class="kol-card">
-                    <div class="kol-header">
-                        <div class="kol-avatar" style="background: linear-gradient(135deg, #a855f7, #9333ea)">CB</div>
-                        <div class="kol-info">
-                            <div class="kol-name">Coin Bureau <span class="kol-badge badge-education">Education</span></div>
-                            <div class="kol-handle">@coinbureau</div>
-                        </div>
-                        <a href="https://twitter.com/coinbureau" class="kol-follow" target="_blank">Follow on 𝕏</a>
-                    </div>
-                    <p class="kol-text">In-depth project reviews and educational content. The go-to for unbiased crypto research.</p>
-                </div>
-
                 <div class="kol-note">📌 Real-time KOL tracking via Twitter/X integration coming soon</div>
             </div>
         </div>
@@ -785,84 +826,129 @@
                 <h2 class="section-title">Artificial Intelligence</h2>
             </div>
             <div class="news-scroll">
-                <a href="https://www.tipranks.com/news/openai-intensifies-race-with-google-as-chatgpt-returns-to-higher-growth" class="news-card" target="_blank">
-                    <h3>OpenAI Intensifies Race with Google as ChatGPT Returns to Growth</h3>
-                    <p><strong>The AI chatbot race between OpenAI, backed by Microsoft, and Google subsidiary Alphabet remains heated</strong> as both companies push for dominance in the rapidly evolving AI landscape.</p>
+                <a href="https://www.nytimes.com/2026/02/10/technology/personaltech/ai-google-meta-opt-out.html" class="news-card" target="_blank">
+                    <h3>AI Personalizes the Internet But Takes Away User Control</h3>
+                    <p><strong>Last month, OpenAI said it would begin showing ads in the free version of ChatGPT</strong>, based on what people were asking the chatbot and what they had looked for in the past. The underlying technology is now being used by advertisers to target consumers.</p>
                     <div class="news-meta">
-                        <span class="news-source">TipRanks</span>
+                        <span class="news-source">New York Times</span>
+                        <span>11 hours ago</span>
+                    </div>
+                </a>
+
+                <a href="https://uk.pcmag.com/ai/163074/curious-about-openais-ai-device-dont-expect-anything-until-2027" class="news-card" target="_blank">
+                    <h3>OpenAI's First Hardware Device Delayed Until Early 2027</h3>
+                    <p>Curious about OpenAI's rumored AI hardware device? Don't get too excited yet. <strong>OpenAI's first hardware device won't be available to buy until early 2027</strong>, according to latest reports from the company's development timeline.</p>
+                    <div class="news-meta">
+                        <span class="news-source">PCMag</span>
+                        <span>15 hours ago</span>
+                    </div>
+                </a>
+
+                <a href="https://bostoninstituteofanalytics.org/blog/latest-machine-learning-updates-in-2026-key-developments-in-generative-ai-this-week-2nd-6th-feb/" class="news-card" target="_blank">
+                    <h3>Allen Institute for AI Introduces Theorizer for Scientific Reasoning</h3>
+                    <p><strong>The Allen Institute for AI (Ai2) introduced Theorizer on February 2nd</strong>, an open-source scientific reasoning tool representing major progress in generative AI for research and breakthrough discovery.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Boston Institute of Analytics</span>
+                        <span>4 days ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.nature.com/" class="news-card" target="_blank">
+                    <h3>Machine Learning Method Solves Battery Development Bottleneck</h3>
+                    <p><strong>A machine-learning method that reasons and adapts has been developed to solve one of the most time-consuming bottlenecks in battery development</strong>, according to research published in Nature on February 10, 2026.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Nature</span>
                         <span>1 day ago</span>
                     </div>
                 </a>
-                <a href="https://www.reinsurancene.ws/openai-approves-first-insurer-built-ai-app-on-chatgpt/" class="news-card" target="_blank">
-                    <h3>OpenAI Approves First Insurer-Built AI App on ChatGPT Platform</h3>
-                    <p>Breaking new ground in enterprise AI adoption. <strong>The technology is not limited to OpenAI — AI apps are also being adopted by Anthropic's Claude, and Google's Gemini</strong> is expected to publish its own standards soon.</p>
+
+                <a href="https://www.fool.com/investing/2026/02/09/once-in-decade-investment-2-best-ai-stocks-buy-now/" class="news-card" target="_blank">
+                    <h3>AppLovin's AI Delivers 115% Higher Ad Returns Than Competitors</h3>
+                    <p><strong>AppLovin delivers a 45% higher return on ad spend (ROAS) than Meta Platforms, and a 115% higher ROAS than other platforms</strong>, including Alphabet's YouTube and TikTok, according to marketing attribution platform Northbeam.</p>
                     <div class="news-meta">
-                        <span class="news-source">Reinsurance News</span>
-                        <span>5 hours ago</span>
-                    </div>
-                </a>
-                <a href="https://adage.com/super-bowl/super-bowl-ad-campaigns/aa-openai-chatgpt/" class="news-card" target="_blank">
-                    <h3>How OpenAI Used Super Bowl to Position ChatGPT as the Kleenex of AI</h3>
-                    <p>OpenAI shows how everyday people could code with ChatGPT's new service called Codex. <strong>Its second Super Bowl commercial ran against those from Google Gemini, Anthropic Claude, Meta and Amazon</strong>.</p>
-                    <div class="news-meta">
-                        <span class="news-source">Ad Age</span>
+                        <span class="news-source">Motley Fool</span>
                         <span>2 days ago</span>
                     </div>
                 </a>
+
+                <a href="https://drexel.edu/news/archive/2026/February/AI-Philadelphia-gentrification" class="news-card" target="_blank">
+                    <h3>AI Machine Learning Gets Better at Spotting Gentrification</h3>
+                    <p>Researchers at Drexel University have drawn on the wisdom of community members in Philadelphia neighborhoods to <strong>hone a computer vision program that can reliably identify and track gentrification</strong> throughout the city.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Drexel University</span>
+                        <span>6 days ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.gesda.global/ai-in-2026-breakthrough-to-coordination/" class="news-card" target="_blank">
+                    <h3>AI in 2026: From Breakthrough to Coordination</h3>
+                    <p>The 2026 GESDA Science Breakthrough Radar®, distilling insights of <strong>2,390 leading researchers from 89 countries, indicates that AI represents a broader signal</strong>. When scientific capability accelerates, governance must move earlier.</p>
+                    <div class="news-meta">
+                        <span class="news-source">GESDA Global</span>
+                        <span>1 week ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" class="news-card" target="_blank">
+                    <h3>Robot Faces Feel Less Creepy Thanks to New Breakthrough</h3>
+                    <p>Humans pay enormous attention to lips during conversation, and robots have struggled badly to keep up. <strong>A new robot developed at Columbia Engineering learned realistic lip movements by watching</strong> human interactions.</p>
+                    <div class="news-meta">
+                        <span class="news-source">ScienceDaily</span>
+                        <span>14 hours ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.globenewswire.com/news-release/2026/02/06/3233826/0/en/Health-Sensors-Market-Headed-for-US-65-3-Billion-by-2032-as-Wearables-and-AI-Transform-Preventive-Healthcare-Astute-Analytica.html" class="news-card" target="_blank">
+                    <h3>Health Sensors Market to Hit $65.3B by 2032 Driven by AI</h3>
+                    <p>A transformative trend sweeping the global health sensors market is <strong>the integration of artificial intelligence (AI) and machine learning (ML) technologies</strong>, revolutionizing how health sensors operate and their impact on healthcare outcomes.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Astute Analytica</span>
+                        <span>5 days ago</span>
+                    </div>
+                </a>
+
                 <a href="https://zeenews.india.com/technology/india-s-first-homegrown-sovereign-ai-model-how-sarvam-ai-is-beating-chatgpt-deepseek-and-google-gemini-check-features-3015138.html" class="news-card" target="_blank">
-                    <h3>India's First Homegrown AI Model Sarvam AI Beats ChatGPT and Gemini</h3>
-                    <p>A Bengaluru-based startup surprised everyone. <strong>Sarvam AI has marked a crucial step in India's technology story</strong> by creating new homegrown AI models specially made for Indian users.</p>
+                    <h3>India's Sarvam AI Launches First Homegrown Sovereign Model</h3>
+                    <p>A Bengaluru-based startup surprised everyone. <strong>Sarvam AI has marked a crucial step in India's technology story</strong> by creating new homegrown AI models specially made for Indian users, competing with ChatGPT and Gemini.</p>
                     <div class="news-meta">
                         <span class="news-source">Zee News</span>
                         <span>1 day ago</span>
                     </div>
                 </a>
-                <a href="https://www.technobezz.com/news/google-brings-gemini-ai-to-chrome-on-chromebook-plus-laptops-in-the-us" class="news-card" target="_blank">
-                    <h3>Google Brings Gemini AI to Chrome on Chromebook Plus Laptops</h3>
-                    <p>Chromebook Plus users in the US can now access <strong>Gemini AI directly in Chrome for contextual help and information from their browser</strong>. Integration deepens Google's AI ecosystem.</p>
-                    <div class="news-meta">
-                        <span class="news-source">Technobezz</span>
-                        <span>1 day ago</span>
-                    </div>
-                </a>
+
                 <a href="https://www.technobezz.com/news/google-deepmind-ceo-says-chinas-ai-models-trail-us-by-only-months" class="news-card" target="_blank">
-                    <h3>Google DeepMind CEO: China's AI Models Trail US by Only Months</h3>
-                    <p>DeepMind CEO described working 100-hour weeks in what he called <strong>"ferociously competitive" AI development — maybe the most intense competition there has ever been in technology</strong> with incredibly high stakes.</p>
+                    <h3>DeepMind CEO: China's AI Models Trail US by Only Months</h3>
+                    <p>DeepMind CEO described working 100-hour weeks in what he called <strong>"ferociously competitive" AI development — maybe the most intense competition there has ever been in technology</strong> with incredibly high stakes between US and China.</p>
                     <div class="news-meta">
                         <span class="news-source">Technobezz</span>
                         <span>1 day ago</span>
                     </div>
                 </a>
-                <a href="https://www.webpronews.com/anthropics-billion-dollar-bet-how-ex-google-veterans-are-building-the-ai-startups-data-center-empire-from-scratch/" class="news-card" target="_blank">
-                    <h3>Anthropic's Billion-Dollar Bet: Building Data Center Empire From Scratch</h3>
-                    <p>Ex-Google veterans are building Anthropic's infrastructure. <strong>The company is locked in fierce competition with OpenAI, Google DeepMind, and well-funded challengers</strong> to build the most capable and safest AI systems.</p>
+
+                <a href="https://www.technobezz.com/news/google-brings-gemini-ai-to-chrome-on-chromebook-plus-laptops-in-the-us" class="news-card" target="_blank">
+                    <h3>Google Brings Gemini AI to Chrome on Chromebook Plus</h3>
+                    <p>Chromebook Plus users in the US can now access <strong>Gemini AI directly in Chrome for contextual help and information from their browser</strong>, deepening Google's AI ecosystem integration.</p>
                     <div class="news-meta">
-                        <span class="news-source">WebProNews</span>
-                        <span>18 hours ago</span>
-                    </div>
-                </a>
-                <a href="https://futurumgroup.com/insights/openai-frontier-close-the-enterprise-ai-opportunity-gap-or-widen-it/" class="news-card" target="_blank">
-                    <h3>OpenAI Frontier: Closing the Enterprise AI Opportunity Gap</h3>
-                    <p>Frontier is designed to integrate with existing enterprise systems, operate across on-premises and cloud environments, and <strong>support collaboration between in-house and third-party agents</strong> from Anthropic, Google, and Microsoft.</p>
-                    <div class="news-meta">
-                        <span class="news-source">Futurum Group</span>
+                        <span class="news-source">Technobezz</span>
                         <span>1 day ago</span>
                     </div>
                 </a>
+
                 <a href="https://thesmartinvestor.com.sg/azure-vs-aws-vs-google-cloud-who-wins-the-ai-race-in-2026/" class="news-card" target="_blank">
-                    <h3>Azure vs AWS vs Google Cloud: Who Wins the AI Race in 2026?</h3>
+                    <h3>Google Cloud AI Revenue Grew Nearly 400% YoY in Q4 2025</h3>
                     <p>Revenue from products built on GCP's proprietary AI models such as Gemini, Imagen, and Veo <strong>grew nearly 400% YoY in Q4 2025</strong>. Through optimization, costs to run Gemini were lowered by 78% in 2025.</p>
                     <div class="news-meta">
                         <span class="news-source">The Smart Investor</span>
                         <span>10 hours ago</span>
                     </div>
                 </a>
-                <a href="https://www.thehindu.com/sci-tech/technology/ai-powered-apps-and-bots-are-barging-into-medicine-doctors-have-questions/article70613678.ece" class="news-card" target="_blank">
-                    <h3>AI-Powered Apps Barge Into Medicine as Doctors Raise Questions</h3>
-                    <p>A spokesperson for OpenAI said <strong>its newest models have significantly improved how they handle health questions</strong>. ChatGPT isn't intended as a substitute for medical professional guidance, the company said.</p>
+
+                <a href="https://llm-stats.com/llm-updates" class="news-card" target="_blank">
+                    <h3>AI Model Updates for February 2026: Latest Releases</h3>
+                    <p><strong>AI model versioning follows patterns that help developers understand capabilities and stability</strong>. Major versions (GPT-3 → GPT-4, Claude 2 → Claude 3) indicate significant capability improvements.</p>
                     <div class="news-meta">
-                        <span class="news-source">The Hindu</span>
-                        <span>7 hours ago</span>
+                        <span class="news-source">LLM Stats</span>
+                        <span>18 hours ago</span>
                     </div>
                 </a>
             </div>
@@ -875,52 +961,119 @@
                 <h2 class="section-title">Global News</h2>
             </div>
             <div class="news-scroll">
-                <div class="news-card">
-                    <h3>Markets Monitor Global Trade Tensions and Economic Data</h3>
-                    <p>Global financial markets remain cautious as investors monitor ongoing trade discussions and key economic indicators across major economies.</p>
+                <a href="https://www.reuters.com/world/americas/ten-dead-after-shooting-canadian-province-british-columbia-cbc-news-reports-2026-02-11/" class="news-card" target="_blank">
+                    <h3>Ten Dead After High School Shooting in Canada</h3>
+                    <p><strong>Six people were found dead inside a high school in Tumbler Ridge, British Columbia</strong>, two more at a connected residence, and another died on the way to hospital. Investigation ongoing in this tragic incident.</p>
                     <div class="news-meta">
                         <span class="news-source">Reuters</span>
-                        <span>6 hours ago</span>
+                        <span>19 minutes ago</span>
                     </div>
-                </div>
-                <div class="news-card">
-                    <h3>Central Banks Signal Continued Cautious Approach to Rates</h3>
-                    <p>Major central banks indicate they will maintain data-dependent approach to monetary policy amid mixed economic signals from key regions.</p>
+                </a>
+
+                <a href="https://www.bloomberg.com/news/articles/2026-02-10/the-108-oil-war-can-the-middle-east-crash-the-world-economy" class="news-card" target="_blank">
+                    <h3>The $108 Oil War: Can the Middle East Crash the World Economy?</h3>
+                    <p>Half a century ago, turmoil in the Middle East brought the global economy to its knees. Today, <strong>even as the region's geopolitics grow more fractious, oil markets and central banks typically treat conflict as a shock to watch</strong>—not one that dictates macro outlook.</p>
                     <div class="news-meta">
                         <span class="news-source">Bloomberg</span>
-                        <span>8 hours ago</span>
+                        <span>9 hours ago</span>
                     </div>
-                </div>
-                <div class="news-card">
-                    <h3>Tech Sector Leads Global Market Volatility Amid AI Investment Boom</h3>
-                    <p>Technology stocks see increased volatility as markets digest massive AI infrastructure spending announcements from major tech companies.</p>
+                </a>
+
+                <a href="https://www.bloomberg.com/news/articles/2026-02-06/trump-s-policies-cause-investors-to-leave-us-rebalance-world-economy" class="news-card" target="_blank">
+                    <h3>Trump's Policies Cause Investors to Rebalance Global Portfolio</h3>
+                    <p><strong>The US today accounts for roughly two-thirds of global listed equity benchmarks, about half of private capital assets and around 40% of global bond markets</strong>. New policies are causing investors to diversify away.</p>
                     <div class="news-meta">
-                        <span class="news-source">Financial Times</span>
-                        <span>12 hours ago</span>
+                        <span class="news-source">Bloomberg</span>
+                        <span>5 days ago</span>
                     </div>
-                </div>
-                <div class="news-card">
-                    <h3>Asian Markets Show Resilience Despite Regional Headwinds</h3>
-                    <p>Asian stock markets demonstrate stability as investors focus on domestic growth drivers and regional economic cooperation initiatives.</p>
+                </a>
+
+                <a href="https://www.bloomberg.com/news/newsletters/2026-02-09/global-economy-focus-on-growth-is-harming-nature-major-un-report-says" class="news-card" target="_blank">
+                    <h3>UN Report: Global Economy's Growth Focus Harming Nature</h3>
+                    <p><strong>The world is running a major nature deficit right now, and the costs could prove enormous</strong>, warns a new UN report. The relentless focus on economic growth is degrading ecosystems at an unsustainable pace.</p>
                     <div class="news-meta">
-                        <span class="news-source">CNBC Asia</span>
-                        <span>14 hours ago</span>
+                        <span class="news-source">Bloomberg</span>
+                        <span>2 days ago</span>
                     </div>
-                </div>
-                <div class="news-card">
-                    <h3>Energy Markets Stabilize After Recent Volatility</h3>
-                    <p>Oil and natural gas prices find equilibrium as supply concerns ease and demand forecasts adjust to seasonal patterns.</p>
+                </a>
+
+                <a href="https://www.bloomberg.com/news/articles/2026-02-06/china-s-easy-money-floods-metals-markets-as-real-economy-falters" class="news-card" target="_blank">
+                    <h3>China's Easy Money Floods Metals Markets as Economy Falters</h3>
+                    <p>With ample cash but fewer investment options, <strong>Chinese speculators have fanned a rally in global metals prices</strong>, underscoring how difficult it is for authorities to channel stimulus into productive economic activity.</p>
                     <div class="news-meta">
-                        <span class="news-source">Reuters Energy</span>
+                        <span class="news-source">Bloomberg</span>
+                        <span>2 days ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.bloomberg.com/news/articles/2026-02-07/world-economy-latest-ecb-holds-rates-steady-while-uk-tilts-toward-cut" class="news-card" target="_blank">
+                    <h3>ECB Holds Rates Steady, UK Tilts Toward Cut</h3>
+                    <p><strong>The European Central Bank left interest rates unchanged, while President Christine Lagarde downplayed a recent rally in the euro</strong> and maintained that inflation risks are broadly balanced.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Bloomberg</span>
+                        <span>4 days ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.marketscreener.com/news/french-unemployment-7-9-in-q4-ce7e5adfdd81f32c" class="news-card" target="_blank">
+                    <h3>French Unemployment Holds at 7.9% in Q4 2025</h3>
+                    <p>France's unemployment rate remained stable at <strong>7.9% in the fourth quarter of 2025</strong>, reflecting a resilient labor market despite broader economic uncertainties across the eurozone.</p>
+                    <div class="news-meta">
+                        <span class="news-source">MarketScreener</span>
                         <span>1 day ago</span>
                     </div>
-                </div>
+                </a>
+
+                <a href="https://japannews.yomiuri.co.jp/" class="news-card" target="_blank">
+                    <h3>US Tops Japan at Milano Cortina 2026 Winter Olympics</h3>
+                    <p><strong>Ilia Malinin lifted the United States above Japan to the top of the podium at the Milano Cortina Games on Sunday</strong> to cap a thrilling team competition where home team Italy captured bronze.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Yomiuri</span>
+                        <span>1 day ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.reuters.com/business/sp-global-forecasts-2026-profit-below-estimates-shares-plunge-2026-02-10/" class="news-card" target="_blank">
+                    <h3>S&P Global Shares Fall on Weak 2026 Forecast, AI Concerns</h3>
+                    <p>S&P Global shares declined after the company issued a weaker-than-expected 2026 profit forecast. <strong>AI disruption fears create buying chance in US software stocks</strong>, some strategists say despite near-term headwinds.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Reuters</span>
+                        <span>8 hours ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.marketscreener.com/news/dollar-yen-down-0-41-at-155-24-ce7e5adfda81ff2c" class="news-card" target="_blank">
+                    <h3>Dollar/Yen Down 0.41% at 155.24</h3>
+                    <p>The dollar weakened against the yen, trading at <strong>155.24 after a 0.41% decline</strong>. Currency markets remain focused on central bank policy divergence and global economic outlook.</p>
+                    <div class="news-meta">
+                        <span class="news-source">MarketScreener</span>
+                        <span>1 day ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.bloomberg.com/news/newsletters/2026-02-06/how-markets-became-one-giant-momentum-trade" class="news-card" target="_blank">
+                    <h3>How Markets Became One Giant Momentum Trade</h3>
+                    <p>Global markets have increasingly become driven by momentum strategies as algorithmic trading and passive investing dominate flows. <strong>This shift has profound implications for volatility and market structure</strong>.</p>
+                    <div class="news-meta">
+                        <span class="news-source">Bloomberg</span>
+                        <span>5 days ago</span>
+                    </div>
+                </a>
+
+                <a href="https://www.blackrock.com/us/individual/insights/blackrock-investment-institute/weekly-commentary" class="news-card" target="_blank">
+                    <h3>BlackRock: Key Economic Data to Watch in February 2026</h3>
+                    <p>BlackRock Investment Institute's latest weekly commentary highlights <strong>U.S. CPI and euro area trade balance as key indicators</strong> to monitor for market direction in coming weeks.</p>
+                    <div class="news-meta">
+                        <span class="news-source">BlackRock</span>
+                        <span>2 days ago</span>
+                    </div>
+                </a>
             </div>
         </div>
 
         <footer>
             <p>Curated with 💪 by <strong>Bobitza</strong> • Powered by <a href="https://openclaw.ai">OpenClaw</a></p>
-            <p style="margin-top: 0.375rem">Last updated: February 10, 2026 at 2:00 PM CET</p>
+            <p style="margin-top: 0.375rem">Last updated: February 11, 2026 at 7:44 AM CET</p>
         </footer>
     </div>
 
