@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lead Qualifier — Know Your Best Leads Instantly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .demo-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 3rem;
+        }
+        .demo-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+        .demo-section p {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+        input, textarea {
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .result {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: #f9fafb;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            display: none;
+        }
+        .result.show {
+            display: block;
+            animation: slideIn 0.4s ease;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .result h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+            font-size: 1.5rem;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .status-badge.qualified {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .status-badge.nurture {
+            background: #fed7aa;
+            color: #92400e;
+        }
+        .status-badge.not_qualified {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .score {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #667eea;
+            margin: 1rem 0;
+        }
+        .reasoning {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: #4b5563;
+            line-height: 1.7;
+            border: 1px solid #e5e7eb;
+        }
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 0.75rem;
+        }
+        .cta-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 1.1rem;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .demo-section {
+                padding: 1.5rem;
+            }
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        .loading.show {
+            display: block;
+        }
+        .spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Lead Qualifier</h1>
+            <p>Know your best leads instantly. Let AI score and qualify every lead in seconds.</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>✨ Try it Live</h2>
+            <p>Fill out the form below with example lead information. Our AI will analyze and qualify it in real-time.</p>
+            
+            <form id="leadForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1-555-0199">
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget</label>
+                        <input type="text" id="budget" name="budget" placeholder="$50,000 - $100,000">
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">Timeline</label>
+                        <input type="text" id="timeline" name="timeline" placeholder="Within 3 months">
+                    </div>
+                    <div class="form-group full">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us what you're looking for..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">🚀 Qualify This Lead</button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>AI is analyzing the lead...</p>
+            </div>
+
+            <div class="result" id="result">
+                <h3>📊 Qualification Result</h3>
+                <div class="status-badge" id="statusBadge"></div>
+                <div class="score" id="score"></div>
+                <div class="reasoning" id="reasoning"></div>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Instant Results</h3>
+                <p>Qualify leads in under 3 seconds. No more manual review or guesswork.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <h3>Smart Scoring</h3>
+                <p>AI analyzes budget, timeline, intent, and urgency to score every lead 1-10.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Save Time & Money</h3>
+                <p>Focus your team on high-quality leads. Stop wasting time on unqualified prospects.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Want This For Your Business?</h2>
+            <p>Automate lead qualification, integrate with your CRM, and close more deals faster.</p>
+            <a href="https://t.me/AnotherOne_22" class="cta-btn">💬 Let's Talk</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('leadForm');
+        const loading = document.getElementById('loading');
+        const result = document.getElementById('result');
+        const submitBtn = form.querySelector('.submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                budget: document.getElementById('budget').value,
+                timeline: document.getElementById('timeline').value,
+                message: document.getElementById('message').value
+            };
+
+            // Show loading
+            loading.classList.add('show');
+            result.classList.remove('show');
+            submitBtn.disabled = true;
+
+            try {
+                // Call Make.com webhook
+                const response = await fetch('https://hook.eu1.make.com/szfad4fmm90fapls7hfhejni6fmir91d', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                // Hide loading
+                loading.classList.remove('show');
+                
+                // Show result
+                const statusBadge = document.getElementById('statusBadge');
+                const score = document.getElementById('score');
+                const reasoning = document.getElementById('reasoning');
+
+                statusBadge.textContent = data.qualification_status.toUpperCase().replace('_', ' ');
+                statusBadge.className = 'status-badge ' + data.qualification_status;
+                
+                score.textContent = `Score: ${data.score}/10`;
+                reasoning.textContent = data.reasoning;
+                
+                result.classList.add('show');
+                submitBtn.disabled = false;
+
+            } catch (error) {
+                loading.classList.remove('show');
+                alert('Error: ' + error.message);
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
