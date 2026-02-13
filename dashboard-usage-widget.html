@@ -1,0 +1,91 @@
+<!-- Live Usage Tracker Card -->
+<div class="dashboard-card">
+    <div class="card-header">
+        <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+            <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h2 class="card-title">💰 Live Usage Tracker</h2>
+    </div>
+    <div class="card-content">
+        <div id="usage-data" style="font-size: 0.85rem;">
+            <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px;">
+                <div style="font-weight: 600; color: #10b981; margin-bottom: 0.5rem;">Today's Total</div>
+                <div style="font-size: 2rem; font-weight: 700; color: #10b981;">$0.0120</div>
+                <div style="font-size: 0.75rem; color: #a1a1aa; margin-top: 0.25rem;">Last updated: just now</div>
+            </div>
+            
+            <div style="margin-bottom: 0.75rem;">
+                <div style="font-weight: 600; color: #f4f4f5; margin-bottom: 0.5rem;">Breakdown:</div>
+                
+                <div style="padding: 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px; margin-bottom: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #a1a1aa;">Claude Sonnet 4.5</span>
+                        <span style="color: #10b981; font-weight: 600;">$0.011</span>
+                    </div>
+                    <div style="font-size: 0.75rem; color: #71717a; margin-top: 0.25rem;">
+                        1 call • 3,000 tokens
+                    </div>
+                </div>
+                
+                <div style="padding: 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #a1a1aa;">Test Model</span>
+                        <span style="color: #10b981; font-weight: 600;">$0.001</span>
+                    </div>
+                    <div style="font-size: 0.75rem; color: #71717a; margin-top: 0.25rem;">
+                        1 call • 300 tokens
+                    </div>
+                </div>
+            </div>
+            
+            <div style="padding: 0.75rem; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px;">
+                <div style="font-size: 0.75rem; color: #60a5fa; font-weight: 600; margin-bottom: 0.25rem;">Monthly Projection</div>
+                <div style="font-size: 1.25rem; font-weight: 700; color: #60a5fa;">$0.36</div>
+                <div style="font-size: 0.7rem; color: #a1a1aa; margin-top: 0.25rem;">Based on today's usage</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Task Progress Tracker Card -->
+<div class="dashboard-card">
+    <div class="card-header">
+        <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b, #f97316);">
+            <i class="fas fa-tasks"></i>
+        </div>
+        <h2 class="card-title">🚧 Building Now</h2>
+    </div>
+    <div class="card-content">
+        <div style="margin-bottom: 1rem; padding: 0.75rem; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 8px;">
+            <div style="font-weight: 600; color: #22c55e; margin-bottom: 0.25rem;">✅ Usage Tracker - COMPLETE</div>
+            <div style="font-size: 0.75rem; color: #a1a1aa;">Database, logger, natural language queries working</div>
+            <div style="width: 100%; background: rgba(255, 255, 255, 0.1); height: 4px; border-radius: 2px; margin-top: 0.5rem;">
+                <div style="width: 100%; height: 100%; background: #22c55e; border-radius: 2px;"></div>
+            </div>
+        </div>
+        
+        <div style="margin-bottom: 0.75rem; padding: 0.75rem; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px;">
+            <div style="font-weight: 600; color: #f59e0b; margin-bottom: 0.25rem;">🟡 Email → CRM - NEXT</div>
+            <div style="font-size: 0.75rem; color: #a1a1aa;">Gmail ingestion, contact extraction, meeting prep</div>
+            <div style="width: 100%; background: rgba(255, 255, 255, 0.1); height: 4px; border-radius: 2px; margin-top: 0.5rem;">
+                <div style="width: 15%; height: 100%; background: #f59e0b; border-radius: 2px;"></div>
+            </div>
+        </div>
+        
+        <div style="margin-bottom: 0.75rem; padding: 0.75rem; background: rgba(100, 100, 100, 0.1); border: 1px solid rgba(100, 100, 100, 0.3); border-radius: 8px;">
+            <div style="font-weight: 600; color: #a1a1aa; margin-bottom: 0.25rem;">⏳ AI Council - QUEUED</div>
+            <div style="font-size: 0.75rem; color: #71717a;">Business intelligence multi-agent system</div>
+            <div style="width: 100%; background: rgba(255, 255, 255, 0.1); height: 4px; border-radius: 2px; margin-top: 0.5rem;">
+                <div style="width: 0%; height: 100%; background: #6b7280; border-radius: 2px;"></div>
+            </div>
+        </div>
+        
+        <div style="padding: 0.75rem; background: rgba(100, 100, 100, 0.1); border: 1px solid rgba(100, 100, 100, 0.3); border-radius: 8px;">
+            <div style="font-weight: 600; color: #a1a1aa; margin-bottom: 0.25rem;">⏳ Self-Updating Markdown - QUEUED</div>
+            <div style="font-size: 0.75rem; color: #71717a;">Daily audit of workspace files</div>
+            <div style="width: 100%; background: rgba(255, 255, 255, 0.1); height: 4px; border-radius: 2px; margin-top: 0.5rem;">
+                <div style="width: 0%; height: 100%; background: #6b7280; border-radius: 2px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
